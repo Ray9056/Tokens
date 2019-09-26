@@ -2,8 +2,10 @@
 <html lang="es">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
     <title>Token</title>
     <link rel="stylesheet" href="./assets/css/style.css"/>
+    <script src="utils/Chatbox.js"></script>
 </head>
 <body>
     <header>
@@ -21,19 +23,8 @@
     </header>
     <iframe id="machine"></iframe>
 
-    <!-- Chat Box -->
-    <div class="col-xs-6">
-        <div class="members-count">-</div>
-        <div class="members-list">-</div>
-        <h1>Chat Box</h1>
-        <hr>
-        <div class="messages"></div>
+    <!-- TODO: Chat Box -->
 
-        <form class="message-form" onsubmit="return false;">
-            <input class="message-form__input" placeholder="Type a message.." type="text" />
-            <input class="message-form__button" value="Send" type="submit" />
-        </form>
-    </div>
     <!------------------>
 
     <script>
@@ -74,8 +65,6 @@
             loader();
         }, false);
     </script>
-
-
 
 </body>
 </html>
