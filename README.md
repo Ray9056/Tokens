@@ -1,6 +1,6 @@
 # Tokens - Old Style Arcade Games
 
-[Check out the App]()
+[Check out the App](https://jernical.github.io/Tokens/)
 
 Reminisce on the good ole days with these classic gems.
 
