@@ -2,10 +2,27 @@
  * Main Styles
  */
  html {
-    background: url("/assets/images/bg.gif");
+    background: radial-gradient(black 15%, transparent 16%) 0 0,
+                radial-gradient(black 15%, transparent 16%) 8px 8px,
+                radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px,
+                radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
+    background-color: #282828;
+    background-size: 16px 16px;
+    height: 100%;
+
+    background: url(../images/bg.gif);
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+body {
+    position: relative;
+    height: 100%;
+    margin: 0px;
+    font: 12px/18px "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-image: radial-gradient(50% 50%, transparent);
+}
+
 
 
 /**
@@ -128,4 +145,73 @@ header p {
     
     #nav li.selected a {
         color: white;
+    }
+
+    
+
+
+    .members-count,
+    .members-list,
+    .messages {
+      padding: 0px;
+      margin-bottom: 15px;
+      color: white;
+    }
+  
+    .members-count {
+        font-size: 20px;
+    }
+    .messages {
+      flex-shrink: 1;
+      background-color: black;
+      opacity: .7;
+      height: 315px;
+      overflow: auto;
+    }
+    .message {
+      padding: 5px 0;
+    }
+    .message .member {
+      display: inline-block;
+    }
+    .member {
+      padding-right: 10px;
+      position: relative;
+      margin-left: 10px;
+    }
+    .message-form {
+      display: flex;
+      flex-shrink: 0;
+    }
+    .message-form__input {
+      flex-grow: 1;
+      border: 1px solid #dfdfdf;
+      padding: 10px 15px;
+      font-size: 16px;
+      opacity: .7;
+    }
+    .message-form__button {
+      margin: 10px;
+  
+      background-color: white;
+      color: black;
+      border: 2px solid #555555;
+      
+      background-color: #555555;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+  
+    .message-form__button:hover {
+      background-color: #555555;
+      color: white;
     }

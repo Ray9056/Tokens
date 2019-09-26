@@ -21,6 +21,21 @@
     </header>
     <iframe id="machine"></iframe>
 
+    <!-- Chat Box -->
+    <div class="col-xs-6">
+        <div class="members-count">-</div>
+        <div class="members-list">-</div>
+        <h1>Chat Box</h1>
+        <hr>
+        <div class="messages"></div>
+
+        <form class="message-form" onsubmit="return false;">
+            <input class="message-form__input" placeholder="Type a message.." type="text" />
+            <input class="message-form__button" value="Send" type="submit" />
+        </form>
+    </div>
+    <!------------------>
+
     <script>
         function play(game) {
             "use strict";
