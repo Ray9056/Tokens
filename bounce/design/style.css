@@ -31,14 +31,14 @@ html, body, input {
 }
 
 a {
-    color: rgba(135, 216, 210);
-    text-shadow: black 0.05em 0.05em 0.05em;
+    color: #333;
+    text-shadow: #666 0.05em 0.05em 0.05em;
     text-decoration: none;
     outline: none;
     font-size: 3em
 }
 a:hover {
-    color: rgba(168, 227, 227);
+    color: black;
     text-shadow: #333 0.05em 0.05em 0.05em;
 }
 
