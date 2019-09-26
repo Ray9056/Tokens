@@ -2,23 +2,10 @@
  * Main Styles
  */
  html {
-    background: radial-gradient(black 15%, transparent 16%) 0 0,
-                radial-gradient(black 15%, transparent 16%) 8px 8px,
-                radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px,
-                radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
-    background-color: #282828;
-    background-size: 16px 16px;
-    height: 100%;
+    background: url("/assets/images/bg.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-
-body {
-    position: relative;
-    height: 100%;
-    margin: 0px;
-    font: 12px/18px "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-image: radial-gradient(50% 50%, transparent, black);
-}
-
 
 
 /**
@@ -34,8 +21,8 @@ header {
     margin: 0;
     z-index: 1;
     box-shadow: 0 5px rgba(0,0,0,0.8);
-    background: linear-gradient(to bottom, rgba(33, 171, 205), rgba(137, 207, 240));
-    border-left: 8px solid grey;
+    background: linear-gradient(to bottom, rgba(135, 216, 210), rgba(113, 196, 194));
+    border-left: 8px solid cyan;
     transition: all 0.5s;
 }
 header.expand {
