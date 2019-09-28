@@ -12,6 +12,6 @@ Reminisce on the good ole days with these classic gems.
 * CSS3
 * JavaScript
        
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](assets\images\Bounce.gif "Bounce")
 
 Copyright 2019 © [Suraj Patel](https://jernical.github.io/Suraj-Patel/)
