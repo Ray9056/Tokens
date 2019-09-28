@@ -11,7 +11,5 @@ Reminisce on the good ole days with these classic gems.
 * HTML5
 * CSS3
 * JavaScript
-    
-[![Image from Gyazo](https://i.gyazo.com/3feca041a63095508da013e27420739f.gif)](https://gyazo.com/3feca041a63095508da013e27420739f)
-    
+       
 Copyright 2019 © [Suraj Patel](https://jernical.github.io/Suraj-Patel/)
