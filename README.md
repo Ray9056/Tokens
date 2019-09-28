@@ -1,4 +1,4 @@
-# Tokens - Old Style Arcade Games
+# Tokens - Virtual Arcade
 
 [Check out the App](https://jernical.github.io/Tokens/)
 
