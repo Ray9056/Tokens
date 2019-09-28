@@ -12,6 +12,6 @@ Reminisce on the good ole days with these classic gems.
 * CSS3
 * JavaScript
        
-![Bounce](assets\images\Bounce.gif)
+![Bounce](https://github.com/Jernical/Tokens/blob/master/assets/images/Bounce.gif)
 
 Copyright 2019 © [Suraj Patel](https://jernical.github.io/Suraj-Patel/)
