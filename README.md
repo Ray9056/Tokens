@@ -12,7 +12,6 @@ Reminisce on the good ole days with these classic gems.
 * CSS3
 * JavaScript
        
-![alt text](assets\images\Bounce.gif "Bounce")
-<a href="https://gyazo.com/670bcb0d926911ab171b9a2d413f8c8f"><img src="https://i.gyazo.com/670bcb0d926911ab171b9a2d413f8c8f.gif" alt="Image from Gyazo" width="1280"/></a>
+![Bounce](assets\images\Bounce.gif "Bounce")
 
 Copyright 2019 © [Suraj Patel](https://jernical.github.io/Suraj-Patel/)
