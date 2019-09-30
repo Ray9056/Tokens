@@ -1,4 +1,4 @@
-# Tokens - Virtual Arcade
+# Tokens - The Virtual Arcade
 
 [Check out the App](https://jernical.github.io/Tokens/)
 
