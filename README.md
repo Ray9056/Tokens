@@ -17,4 +17,7 @@ Reminisce on the good ole days with these classic gems.
 
 ![Bounce](https://github.com/Jernical/Tokens/blob/master/assets/images/Bounce.gif)
 
+## Second Game: Snake
+* Snake is a game concept where the player maneuvers a snake which grows in length when the food on the board is eaten, with the line and walls being a primary obstacle.
+
 Copyright 2019 © [Suraj Patel](https://jernical.github.io/Suraj-Patel/)
