@@ -22,7 +22,7 @@ Reminisce on the good ole days with these classic gems.
 
 ![Snake](https://github.com/Jernical/Tokens/blob/master/assets/images/Snake.gif)
 
-## Third Game: Pacman (Comming Soon)
+## Third Game: Pacman (Coming Soon)
 * Pacman is an game, where a yellow, circular character navigates a maze, consuming pellets and fruit, avoiding ghosts and occasionally eating them.
 
 Copyright 2019 © [Suraj Patel](https://jernical.github.io/Suraj-Patel/)
