@@ -1,8 +1,8 @@
 # Tokens - The Virtual Arcade
 
-[Check out the App](https://jernical.github.io/Tokens/)
-
 Reminisce on the good ole days with these classic gems.
+
+[Check out the App](https://jernical.github.io/Tokens/)
 
 ## How to Play ##
 * Select the game you would like to play, then go at it!
