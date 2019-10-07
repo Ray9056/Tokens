@@ -1,8 +1,8 @@
 # Tokens - The Virtual Arcade
 
-[Check out the App](https://jernical.github.io/Tokens/)
-
 Reminisce on the good ole days with these classic gems.
+
+[Check out the App](https://jernical.github.io/Tokens/)
 
 ## How to Play ##
 * Select the game you would like to play, then go at it!
@@ -22,4 +22,7 @@ Reminisce on the good ole days with these classic gems.
 
 ![Snake](https://github.com/Jernical/Tokens/blob/master/assets/images/Snake.gif)
 
-Copyright 2019 © [Suraj Patel](https://jernical.github.io/Suraj-Patel/)
+## Third Game: Pacman (Coming Soon)
+* Pacman is an game, where a yellow, circular character navigates a maze, consuming pellets and fruit, avoiding ghosts and occasionally eating them.
+
+Copyright © 2019 [Suraj Patel](https://jernical.github.io/Suraj-Patel/)
