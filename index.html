@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width" />
     <title>Token</title>
-    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <script src="utils/Chatbox.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1 id="title">TOKEN</h1>
-        <p id="expand" style="color: white; font-size: 15px;"> Hover Expand for more games.</p>
-        <p id="select" style="color: white; font-size: 15px;">Select a game. More Games Comming soon!</p>
-        <ul id="nav">
-            <li><a href="#bounce" data-game="bounce">Bounce</a></li>
-            <li><a href="#snake" data-game="snake">Snake</a></li>
-            <li><a href="#tetris" data-game="tetris">Tetris</a></li>
-            <li><a href="#pacman" data-game="pacman">Pacman</a></li>
-            <li><a href="#defender" data-game="defender">Defender</a></li>
-            <!-- More Games Soon :) --> 
-        </ul>
+      <h1 id="title">TOKEN</h1>
+      <p id="expand" style="color: white; font-size: 15px;">
+        Hover Expand for more games.
+      </p>
+      <p id="select" style="color: white; font-size: 15px;">
+        Select a game. More Games Comming soon!
+      </p>
+      <ul id="nav">
+        <li><a href="#bounce" data-game="bounce">Bounce</a></li>
+        <li><a href="#snake" data-game="snake">Snake</a></li>
+        <li><a href="#tetris" data-game="tetris">Tetris</a></li>
+        <li><a href="#pacman" data-game="pacman">Pacman</a></li>
+        <li><a href="#defender" data-game="defender">Defender</a></li>
+        <!-- More Games Soon :) -->
+      </ul>
     </header>
     <iframe id="machine"></iframe>
 
@@ -28,43 +32,48 @@
     <!------------------>
 
     <script>
-        function play(game) {
-            "use strict";
-            
-            var i, li = document.getElementById("nav").getElementsByTagName("li");
-            for (i = 0; i < li.length; i += 1) {
-                if (li[i].children[0].getAttribute("data-game") === game) {
-                    li[i].className = "selected";
-                } else {
-                    li[i].className = "";
-                }
-            }
-            document.getElementById("title").innerHTML = game;
-            document.getElementById("machine").src = game + "/index.html";
-            document.title = "Token: " + game.substring(0, 1).toUpperCase() + game.substring(1);
-        }
-        
-        function loader() {
-            "use strict";
-            var header = document.querySelector("header");
-            play(location.hash.substring(1) || "bounce");
-            
-            header.addEventListener("mouseover", function (e) {
-                header.classList.add("expand");
-            });
-            header.addEventListener("mouseout", function (e) {
-                header.classList.remove("expand");
-            });
-            document.querySelector("#nav").addEventListener("click", function (e) {
-                play(e.target.dataset.game);
-            });
-        }
-        
-        window.addEventListener("load", function () {
-            "use strict";
-            loader();
-        }, false);
-    </script>
+      function play(game) {
+        "use strict";
 
-</body>
+        var i,
+          li = document.getElementById("nav").getElementsByTagName("li");
+        for (i = 0; i < li.length; i += 1) {
+          if (li[i].children[0].getAttribute("data-game") === game) {
+            li[i].className = "selected";
+          } else {
+            li[i].className = "";
+          }
+        }
+        document.getElementById("title").innerHTML = game;
+        document.getElementById("machine").src = game + "/index.html";
+        document.title =
+          "Token: " + game.substring(0, 1).toUpperCase() + game.substring(1);
+      }
+
+      function loader() {
+        "use strict";
+        var header = document.querySelector("header");
+        play(location.hash.substring(1) || "bounce");
+
+        header.addEventListener("mouseover", function(e) {
+          header.classList.add("expand");
+        });
+        header.addEventListener("mouseout", function(e) {
+          header.classList.remove("expand");
+        });
+        document.querySelector("#nav").addEventListener("click", function(e) {
+          play(e.target.dataset.game);
+        });
+      }
+
+      window.addEventListener(
+        "load",
+        function() {
+          "use strict";
+          loader();
+        },
+        false
+      );
+    </script>
+  </body>
 </html>
