@@ -3,23 +3,35 @@
  */
 var AStar = (function () {
     "use strict";
-    
+
 
     function diagonalSuccessors($N, $S, $E, $W, N, S, E, W, grid, rows, cols, result, i, walkable) {
         if ($N) {
             if ($E && grid[N][E] < walkable) {
-                result[i++] = { x: E, y: N };
+                result[i++] = {
+                    x: E,
+                    y: N
+                };
             }
             if ($W && grid[N][W] < walkable) {
-                result[i++] = { x: W, y: N };
+                result[i++] = {
+                    x: W,
+                    y: N
+                };
             }
         }
         if ($S) {
             if ($E && grid[S][E] < walkable) {
-                result[i++] = { x: E, y: S };
+                result[i++] = {
+                    x: E,
+                    y: S
+                };
             }
             if ($W && grid[S][W] < walkable) {
-                result[i++] = { x: W, y: S };
+                result[i++] = {
+                    x: W,
+                    y: S
+                };
             }
         }
         return result;
@@ -32,18 +44,30 @@ var AStar = (function () {
         $W = W > -1;
         if ($E) {
             if ($N && grid[N][E] < walkable) {
-                result[i++] = { x: E, y: N };
+                result[i++] = {
+                    x: E,
+                    y: N
+                };
             }
             if ($S && grid[S][E] < walkable) {
-                result[i++] = { x: E, y: S };
+                result[i++] = {
+                    x: E,
+                    y: S
+                };
             }
         }
         if ($W) {
             if ($N && grid[N][W] < walkable) {
-                result[i++] = { x: W, y: N };
+                result[i++] = {
+                    x: W,
+                    y: N
+                };
             }
             if ($S && grid[S][W] < walkable) {
-                result[i++] = { x: W, y: S };
+                result[i++] = {
+                    x: W,
+                    y: S
+                };
             }
         }
         return result;
@@ -64,11 +88,31 @@ var AStar = (function () {
             $W = W > -1 && grid[y][W] < walkable,
             result = [],
             i = 0;
-        
-        if ($N) { result[i++] = { x: x, y: N }; }
-        if ($E) { result[i++] = { x: E, y: y }; }
-        if ($S) { result[i++] = { x: x, y: S }; }
-        if ($W) { result[i++] = { x: W, y: y }; }
+
+        if ($N) {
+            result[i++] = {
+                x: x,
+                y: N
+            };
+        }
+        if ($E) {
+            result[i++] = {
+                x: E,
+                y: y
+            };
+        }
+        if ($S) {
+            result[i++] = {
+                x: x,
+                y: S
+            };
+        }
+        if ($W) {
+            result[i++] = {
+                x: W,
+                y: y
+            };
+        }
         return find($N, $S, $E, $W, N, S, E, W, grid, rows, cols, result, i, walkable);
     }
 
@@ -79,7 +123,7 @@ var AStar = (function () {
     function euclidean(start, end, f1, f2) {
         var x = start.x - end.x,
             y = start.y - end.y;
-        
+
         return f2(x * x + y * y);
     }
 
@@ -96,28 +140,38 @@ var AStar = (function () {
             f2 = Math.max,
             list = {},
             result = [],
-            open = [{ x: start[0], y: start[1], f: 0, g: 0, v: start[0] + start[1] * cols }],
+            open = [{
+                x: start[0],
+                y: start[1],
+                f: 0,
+                g: 0,
+                v: start[0] + start[1] * cols
+            }],
             length = 1;
-        
-        end = { x: end[0], y: end[1], v: end[0] + end[1] * cols };
+
+        end = {
+            x: end[0],
+            y: end[1],
+            v: end[0] + end[1] * cols
+        };
         find = f === "Diagonal" || f === "Euclidean" ? diagonalSuccessors : find;
-        
+
         switch (f) {
-        case "Diagonal":
-        case "DiagonalFree":
-            distance = diagonal;
-            break;
-        case "Euclidean":
-        case "EuclideanFree":
-            f2 = Math.sqrt;
-            distance = euclidean;
-            break;
-        default:
-            distance = manhattan;
-            find = nothingToDo;
-            break;
+            case "Diagonal":
+            case "DiagonalFree":
+                distance = diagonal;
+                break;
+            case "Euclidean":
+            case "EuclideanFree":
+                f2 = Math.sqrt;
+                distance = euclidean;
+                break;
+            default:
+                distance = manhattan;
+                find = nothingToDo;
+                break;
         }
-        
+
         find = find || diagonalSuccessorsFree;
         do {
             max = limit;
@@ -156,7 +210,7 @@ var AStar = (function () {
         } while (length);
         return result;
     }
-    
-    
+
+
     return AStar;
 }());
