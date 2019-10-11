@@ -10,7 +10,7 @@ Reminisce on the good ole days with these classic gems.
 ## Technologies Used
 * HTML5
 * CSS3
-* JavaScript
+* JavaScript/jQuery
 
 ## First Game: Bounce (Speed/Bricks)
 * A game created with inspiration drawn from Pong. See how long you can keep the ball in the air, and try both gamemodes.
