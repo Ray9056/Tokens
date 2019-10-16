@@ -1,0 +1,70 @@
+/**
+ * Game Fonts
+ */
+ @font-face {
+	font-family: "Whimsy TT";
+	font-style: normal;
+	font-weight: normal;
+	src: local("Whimsy TT"), url("../fonts/whimsytt.ttf") format("truetype");
+}
+
+
+
+/**
+ * Main Styles
+ */
+html, body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-color: transparent;    
+    backface-visibility: hidden;
+}
+html, body, input {
+	font-family: "Whimsy TT";
+	font-size: 12px;
+	line-height: 1.5em;
+	color: white;
+}
+
+h1 {
+	font-size: 6em;
+	font-weight: normal;
+	text-align: center;
+}
+h2 {
+    font-size: 4.5em;
+    text-align: center;
+}
+
+a {
+	color: rgb(204, 204, 204);
+	text-decoration: none;
+	font-size: 2em;
+	line-height: 1.5em;
+    transition: all 0.2s;
+	outline: none;
+}
+	a:hover {
+		color: white;
+		font-size: 2.5em;
+		line-height: 1.2em;
+	}
+
+
+#container {
+	position: absolute;
+	top: 50%;
+	bottom: 50%;
+	left: 50%;
+	right: 50%;
+	margin-top: -18.5em;
+    margin-left: -16em;
+	width: 30em;
+	height: 35em;
+	box-shadow: inset 0 0 0 999px rgb(0, 0, 0);
+	border: 1em solid rgba(0, 0, 0, 0.4);
+}
