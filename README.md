@@ -10,7 +10,7 @@ Reminisce on the good ole days with these classic gems.
 ## Technologies Used
 * HTML5
 * CSS3
-* JavaScript/jQuery
+* JavaScript
 
 ## First Game: Bounce (Speed/Bricks)
 * A game created with inspiration drawn from Pong. See how long you can keep the ball in the air, and try both gamemodes.
@@ -24,5 +24,6 @@ Reminisce on the good ole days with these classic gems.
 
 ## Third Game: Pacman (Coming Soon)
 * Pacman is an game, where a yellow, circular character navigates a maze, consuming pellets and fruit, avoiding ghosts and occasionally eating them.
+
 
 Copyright © 2019 [Suraj Patel](https://jernical.github.io/Suraj-Patel/)
