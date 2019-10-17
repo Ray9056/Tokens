@@ -573,3 +573,73 @@ function getTileCenter(tile) {
             return boardMatrix[row][col] === tunnelValue;
         },
         
+        /**
+         * Returns true if there can be a pill at the given position
+         * @param {number} col
+         * @param {number} row
+         * @return {boolean}
+         */
+        hasPill(col, row) {
+            return boardMatrix[row][col] === pillPathValue || boardMatrix[row][col] === interPillValue;
+        },
+        
+        
+        /**
+         * Returns all the possible turns at a given position
+         * @param {string} pos
+         * @return {Array.<number>}
+         */
+        getTurns(pos) {
+            return boardTurns[pos] || null;
+        },
+        
+        /**
+         * Converts a x,y object into a string
+         * @param {{x: number, y: number}} tile
+         * @return {string}
+         */
+        tileToString(tile) {
+            return "x" + String(tile.x) + "y" + String(tile.y);
+        },
+        
+        /**
+         * Transforms a number into an x,y direction
+         * @param {number} value
+         * @return {{x: number, y: number}}
+         */
+        numberToDir(value) {
+            switch (value) {
+            case 0:
+                return { x:  0, y: -1 };   // Up
+            case 1:
+                return { x: -1, y:  0 };   // Left
+            case 2:
+                return { x:  0, y:  1 };   // Down
+            case 3:
+                return { x:  1, y:  0 };   // Right
+            }
+        },
+        
+        /**
+         * Transforms an x,y direction into a number
+         * @param {{x: number, y: number}} dir
+         * @return {number}
+         */
+        dirToNumber(dir) {
+            switch (this.tileToString(dir)) {
+            case "x0y-1":
+                return 0;   // Up
+            case "x-1y0":
+                return 1;   // Left
+            case "x0y1":
+                return 2;   // Down
+            case "x1y0":
+                return 3;   // Right
+            }
+        },
+                
+        
+        getTileCenter,
+        tileToPos
+    };
+}());
