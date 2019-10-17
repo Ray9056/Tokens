@@ -463,3 +463,62 @@ function getTileCenter(tile) {
             };
         },
        
+        /**
+         * Does a sumatory over all the tiles
+         * @param {...{x: number, y: number}} tiles
+         * @return {{x: number, y: number}}
+         */
+        sumTiles(...tiles) {
+            return tiles.reduce((last, current) => {
+                return { x: last.x + current.x, y: last.y + current.y };
+            }, { x: 0, y: 0 });
+        },
+        
+        /**
+         * Returns true if the given tiles are the same
+         * @param {{x: number, y: number}} tile1
+         * @param {{x: number, y: number}} tile2
+         * @return {boolean}
+         */
+        equalTiles(tile1, tile2) {
+            return tile1.x === tile2.x && tile1.y === tile2.y;
+        },
+        
+        
+        /**
+         * Returns the rectangle for the Pill at the given position
+         * @param {number} x
+         * @param {number} y
+         * @return {{x: number, y: number, size: number}}
+         */
+        getPillRect(x, y) {
+            return {
+                x    : Board.getTileCenter(x) - Board.pillSize / 2,
+                y    : Board.getTileCenter(y) - Board.pillSize / 2,
+                size : Board.pillSize
+            };
+        },
+        
+        /**
+         * Returns the rectangle for the Fruit
+         * @return {{left: number, right: number, top: number, bottom: number}}
+         */
+        getFruitRect() {
+            let pos  = Board.fruitPos,
+                size = Board.fruitSize / 3;
+            
+            return {
+                left   : pos.x - size,
+                right  : pos.x + size,
+                top    : pos.y - size,
+                bottom : pos.y + size
+            };
+        },
+        
+        
+        /**
+         * Returns a new position for a player if is at the end of the tunnel
+         * @param {number} x
+         * @return {number}
+         */
+        
