@@ -522,3 +522,54 @@ function getTileCenter(tile) {
          * @return {number}
          */
         
+        tunnelEnds(x) {
+            if (x < tunnelStart) {
+                return tunnelEnd;
+            }
+            if (x > tunnelEnd) {
+                return tunnelStart;
+            }
+            return x;
+        },
+        
+        
+        /**
+         * Returns true if there is a wall at the given position
+         * @param {number} col
+         * @param {number} row
+         * @return {boolean}
+         */
+        inBoard(col, row) {
+            return row >= 0 && col >= 0 && row < boardRows && col < boardCols;
+        },
+        
+        /**
+         * Returns true if there is a wall at the given position
+         * @param {number} col
+         * @param {number} row
+         * @return {boolean}
+         */
+        isWall(col, row) {
+            return boardMatrix[row][col] === wallValue;
+        },
+        
+        /**
+         * Returns true if there is an intersection at the given position
+         * @param {number} col
+         * @param {number} row
+         * @return {boolean}
+         */
+        isIntersection(col, row) {
+            return boardMatrix[row][col] === interValue || boardMatrix[row][col] === interPillValue;
+        },
+        
+        /**
+         * Returns true if there is a tunnel at the given position
+         * @param {number} col
+         * @param {number} row
+         * @return {boolean}
+         */
+        isTunnel(col, row) {
+            return boardMatrix[row][col] === tunnelValue;
+        },
+        
