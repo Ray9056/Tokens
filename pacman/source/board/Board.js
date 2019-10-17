@@ -226,4 +226,98 @@ function getTileCenter(tile) {
             screenCanvas.clear();
         },
         
-   
+       /**
+         * Returns the width of the canvas
+         * @return {number}
+         */
+        get width() {
+            return canvasWidth;
+        },
+        
+        /**
+         * Returns the height of the canvas
+         * @return {number}
+         */
+        get height() {
+            return totalHeight;
+        },
+        
+        /**
+         * Returns the amount of columns of the matrix
+         * @return {number}
+         */
+        get cols() {
+            return boardCols;
+        },
+        
+        /**
+         * Returns the amount of rows of the matrix
+         * @return {number}
+         */
+        get rows() {
+            return boardRows;
+        },
+        
+        /**
+         * Returns the tile size
+         * @return {number}
+         */
+        get tileSize() {
+            return tileSize;
+        },
+        
+        /**
+         * Returns the line width
+         * @return {number}
+         */
+        get lineWidth() {
+            return lineWidth;
+        },
+        
+        /**
+         * Returns the half of the line width
+         * @return {number}
+         */
+        get halfLine() {
+            return halfLine;
+        },
+        
+        /**
+         * Returns the big radius
+         * @return {number}
+         */
+        get bigRadius() {
+            return bigRadius;
+        },
+        
+        /**
+         * Returns the small radius
+         * @return {number}
+         */
+        get smallRadius() {
+            return smallRadius;
+        },
+        
+        /**
+         * Returns the erase size
+         * @return {number}
+         */
+        get eraseSize() {
+            return eraseSize;
+        },
+        
+        /**
+         * Returns the board color
+         * @return {string}
+         */
+        get boardColor() {
+            return boardColor;
+        },
+        
+        /**
+         * Returns an array with the position of the energizers
+         * @return {Array.<{x: number, y: number}>}
+         */
+        get energizers() {
+            return energizers;
+        },
