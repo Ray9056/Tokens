@@ -115,3 +115,43 @@ let Board = (function () {
         x15y29 : [ 0, 1, 3    ],
         x26y29 : [ 0, 1       ]
     },
+
+    /** @const Board data */
+    energizers    = [{ x: 1, y: 3 }, { x: 26, y: 3 }, { x: 1, y: 23 }, { x: 26, y: 23 }],
+    pillAmount    = 244,
+    fruitTile     = { x: 13.25, y: 16.8333 },
+    fruitSize     = 20,
+    tileSize      = 12,
+    lineWidth     = 2,
+    halfLine      = lineWidth / 2,
+    bigRadius     = tileSize / 2,
+    smallRadius   = tileSize / 4,
+    eraseSize     = tileSize * 2,
+    boardCols     = boardMatrix[0].length,
+    boardRows     = boardMatrix.length,
+    canvasWidth   = tileSize * boardCols,
+    canvasHeight  = tileSize * boardRows,
+    scoreHeight   = tileSize * 2,
+    totalHeight   = canvasHeight + scoreHeight,
+    tunnelStart   = -tileSize / 2,
+    tunnelEnd     = tileSize * boardCols + tunnelStart,
+    ghostSize     = tileSize * 1.5,
+    blobRadius    = Math.round(tileSize / 1.5),
+    pillSize      = Math.round(tileSize * 0.16666),
+    energizerSize = Math.round(tileSize * 0.41666),
+    boardColor    = "rgb(0, 51, 255)",
+    startingPos   = { x: 14, y: 23 },
+    startingDir   = { x: -1, y:  0 },
+    eyesTarget    = { x: 13, y: 11 };
+
+/** @type {Canvas} The Game Canvas */
+let boardCanvas, screenCanvas, gameCanvas;
+
+
+/**
+ * Returns the position at the middle of a tile
+ * @param {number} tile
+ * @return {number}
+ */
+function getTileCenter(tile) {
+    return Math.round((tile + 0.5) * tileSize);
