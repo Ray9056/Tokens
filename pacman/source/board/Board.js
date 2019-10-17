@@ -155,3 +155,75 @@ let boardCanvas, screenCanvas, gameCanvas;
  */
 function getTileCenter(tile) {
     return Math.round((tile + 0.5) * tileSize);
+}
+
+ /**
+     * Converts an x,y tile into an x,y position
+     * @param {{x: number, y: number}} tile
+     * @return {{x: number, y: number}}
+     */
+    function tileToPos(tile) {
+        return { x: tile.x * tileSize, y: tile.y * tileSize };
+    }
+    
+    /**
+     * The Board API
+     */
+    return {
+        create() {
+            boardCanvas  = new BoardCanvas();
+            screenCanvas = new Canvas().init("screen");
+            gameCanvas   = new GameCanvas();
+        },
+
+        /**
+         * Returns the conetext for the board element
+         * @return {Canvas}
+         */
+        get boardCanvas() {
+            return boardCanvas;
+        },
+
+        /**
+         * Returns the conetext for the screen element
+         * @return {Canvas}
+         */
+        get screenCanvas() {
+            return screenCanvas;
+        },
+
+        /**
+         * Returns the conetext for the game element
+         * @return {Canvas}
+         */
+        get gameCanvas() {
+            return gameCanvas;
+        },
+        
+        
+        
+        /**
+         * Clears the saved rects in the Game Canvas
+         */
+        clearGame() {
+            gameCanvas.clearSavedRects();
+        },
+        
+        /**
+         * Draws the board
+         * @param {boolean} newLevel
+         */
+        drawBoard(newLevel) {
+            boardCanvas.drawBoard(newLevel);
+        },
+        
+        /**
+         * Clears all the Canvas
+         */
+        clearAll() {
+            boardCanvas.clear();
+            gameCanvas.clear();
+            screenCanvas.clear();
+        },
+        
+   
