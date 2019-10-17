@@ -429,4 +429,37 @@ function getTileCenter(tile) {
             return inPen ? { x: -1, y: 0 } : null;
         },
         
+        /**
+         * Returns the position at the middle of a tile
+         * @param {{x: number, y: number}} tile
+         * @return {{x: number, y: number}}
+         */
+        getTileXYCenter(tile) {
+            return {
+                x : getTileCenter(tile.x),
+                y : getTileCenter(tile.y)
+            };
+        },
+        
+        /**
+         * Returns the position at the top-left corner of a tile
+         * @param {number} tile
+         * @return {number}
+         */
+        getTileCorner(tile) {
+            return Math.round(tile * tileSize);
+        },
+        
+        /**
+         * Returns the position of a tile in terms of the matrix coordinates
+         * @param {number} x
+         * @param {number} y
+         * @return {{x: number, y: number}}
+         */
+        getTilePos(x, y) {
+            return {
+                x : Math.floor(x / tileSize),
+                y : Math.floor(y / tileSize)
+            };
+        },
        
