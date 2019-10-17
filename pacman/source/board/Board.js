@@ -321,3 +321,112 @@ function getTileCenter(tile) {
         get energizers() {
             return energizers;
         },
+
+         /**
+         * Returns the amount of Pills in the board
+         * @return {number}
+         */
+        get pillAmount() {
+            return pillAmount;
+        },
+        
+        /**
+         * The tile of the fruit in the board
+         * @return {{x: number, y: number}}
+         */
+        get fruitTile() {
+            return fruitTile;
+        },
+        
+        /**
+         * The position of the fruit in the board
+         * @return {{x: number, y: number}}
+         */
+        get fruitPos() {
+            return tileToPos(fruitTile);
+        },
+        
+        /**
+         * The size of the fruit in the board
+         * @return {number}
+         */
+        get fruitSize() {
+            return fruitSize;
+        },
+        
+        /**
+         * The size of the pill in the board
+         * @return {number}
+         */
+        get pillSize() {
+            return pillSize;
+        },
+        
+        /**
+         * The size of the energizer in the board
+         * @return {number}
+         */
+        get energizerSize() {
+            return energizerSize;
+        },
+        
+        /**
+         * The ghost size in the board
+         * @return {number}
+         */
+        get ghostSize() {
+            return ghostSize;
+        },
+        
+        /**
+         * The blob radius in the board
+         * @return {number}
+         */
+        get blobRadius() {
+            return blobRadius;
+        },
+        
+        /**
+         * Returns the starting position of the blob
+         * @return {{x: number, y: number}}
+         */
+        get startingPos() {
+            return { x: startingPos.x, y: startingPos.y };
+        },
+        
+        /**
+         * Returns the starting direction of the blob
+         * @return {{x: number, y: number}}
+         */
+        get startingDir() {
+            return { x: startingDir.x, y: startingDir.y };
+        },
+        
+        
+        /**
+         * Returns the eyes target
+         * @return {{x: number, y: number}}
+         */
+        get eyesTarget() {
+            return eyesTarget;
+        },
+        
+        /**
+         * Returns the ghost starting tile depending if is on the pen
+         * @param {boolean} inPen
+         * @return {{x: number, y: number}}
+         */
+        getGhostStartTile(inPen) {
+            return inPen ? { x: 13, y: 14 } : { x: 13, y: 11 };
+        },
+        
+        /**
+         * Returns the ghost starting turn depending if is on the pen
+         * @param {boolean} inPen
+         * @return {?{x: number, y: number}}
+         */
+        getGhostStartTurn(inPen) {
+            return inPen ? { x: -1, y: 0 } : null;
+        },
+        
+       
