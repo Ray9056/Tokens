@@ -372,4 +372,27 @@ class BoardCanvas extends Canvas {
         this.ctx.stroke();
     }
 
-    
+        /**
+     * Draws the intersections over the board for testing
+     */
+    drawIntersections() {
+        Object.keys(Board.boardTurns).forEach((key) => {
+            let coords = key.replace("x", "").split("y"),
+                x      = Board.getTileCorner(Number(coords[0])),
+                y      = Board.getTileCorner(Number(coords[1]));
+            
+            this.ctx.fillRect(x, y, Board.tileSize, Board.tileSize);
+            this.ctx.save();
+            this.ctx.strokeStyle = "white";
+            
+            Board.boardTurns[key].forEach((value) => {
+                let dir = Board.numberToDir(value),
+                    bx  = Board.getTileCorner(Number(coords[0]) + dir.x),
+                    by  = Board.getTileCorner(Number(coords[1]) + dir.y);
+                
+                this.ctx.strokeRect(bx, by, Board.tileSize, Board.tileSize);
+            });
+            this.ctx.restore();
+        });
+    }
+}
