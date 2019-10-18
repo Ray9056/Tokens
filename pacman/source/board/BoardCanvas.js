@@ -98,3 +98,18 @@ class BoardCanvas extends Canvas {
         this.ctx.restore();
     }
    
+    /**
+     * Draws the Ghosts Pen House
+     */
+    drawGhostsPen() {
+        this.ctx.strokeRect(10.5 * Board.tileSize,                  12.5 * Board.tileSize,                  7 * Board.tileSize,                   4 * Board.tileSize);
+        this.ctx.strokeRect(11   * Board.tileSize - Board.halfLine, 13   * Board.tileSize - Board.halfLine, 6 * Board.tileSize + Board.lineWidth, 3 * Board.tileSize + Board.lineWidth);
+        this.ctx.strokeRect(13   * Board.tileSize - Board.halfLine, 12.5 * Board.tileSize,                  2 * Board.tileSize + Board.lineWidth, Board.tileSize / 2 - Board.halfLine);
+        this.ctx.clearRect(13    * Board.tileSize,                  12.5 * Board.tileSize - Board.halfLine, 2 * Board.tileSize,                   Board.tileSize / 2 + Board.halfLine);
+        
+        this.ctx.save();
+        this.ctx.strokeStyle = "white";
+        this.ctx.strokeRect(13   * Board.tileSize + Board.halfLine, 12.5 * Board.tileSize + Board.lineWidth, 2 * Board.tileSize - Board.lineWidth, Board.halfLine);
+        this.ctx.restore();
+    }
+    
