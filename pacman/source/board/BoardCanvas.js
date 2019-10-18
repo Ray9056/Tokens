@@ -334,3 +334,23 @@ class BoardCanvas extends Canvas {
         this.corner(pos, radius, type, anitclockwise);
     }
     
+    /**
+     * Draws a corner at the given position and with the given radius and type
+     * @param {{x: number, y: number}} pos
+     * @param {number} radius
+     * @param {string} type
+     * @param {boolean} anitclockwise
+     */
+    corner(pos, radius, type, anitclockwise) {
+        let rad    = this.radians[type],
+            result = [rad.from * Math.PI, rad.to * Math.PI];
+        
+        if (anitclockwise) {
+            result.reverse();
+        }
+        rad = { from: result[0], to: result[1] };
+        
+        this.ctx.arc(pos.x, pos.y, radius, rad.from, rad.to, anitclockwise);
+    }
+
+    
