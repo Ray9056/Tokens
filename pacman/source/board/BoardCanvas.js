@@ -353,4 +353,23 @@ class BoardCanvas extends Canvas {
         this.ctx.arc(pos.x, pos.y, radius, rad.from, rad.to, anitclockwise);
     }
 
+    /**
+     * Draws lines over the board for testing
+     */
+    drawLines() {
+        this.ctx.strokeStyle = "#CCC";
+        this.ctx.lineWidth   = 1;
+        this.ctx.beginPath();
+        
+        for (let i = 0; i < Board.rows; i += 1) {
+            this.ctx.moveTo(0,           i * Board.tileSize);
+            this.ctx.lineTo(Board.width, i * Board.tileSize);
+        }
+        for (let i = 0; i < Board.cols; i += 1) {
+            this.ctx.moveTo(i * Board.tileSize, 0);
+            this.ctx.lineTo(i * Board.tileSize, Board.canvasHeight);
+        }
+        this.ctx.stroke();
+    }
+
     
