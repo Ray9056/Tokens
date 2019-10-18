@@ -113,3 +113,41 @@ class BoardCanvas extends Canvas {
         this.ctx.restore();
     }
     
+    /**
+     * Draws the Board outer border
+     */
+    drawOuterBorder() {
+        this.ctx.beginPath();
+        
+        // Top Corners
+        this.drawOuterBigCorner(0,  0, "top-left");
+        this.drawOuterBigCorner(27, 0, "top-right");
+        
+        // Right Tunnel
+        this.drawOuterBigCorner(27,    9, "bottom-right");
+        this.drawOuterSmallCorner(22,  9, "top-left");
+        this.drawOuterSmallCorner(22, 13, "bottom-left");
+        this.ctx.lineTo(28 * Board.tileSize, 13 * Board.tileSize + Board.halfLine);
+        this.ctx.moveTo(28 * Board.tileSize, 16 * Board.tileSize - Board.halfLine);
+        this.drawOuterSmallCorner(22, 15, "top-left");
+        this.drawOuterSmallCorner(22, 19, "bottom-left");
+        this.drawOuterBigCorner(27,   19, "top-right");
+        
+        // Bottom Corners
+        this.drawOuterBigCorner(27,   30, "bottom-right");
+        this.drawOuterBigCorner(0,    30, "bottom-left");
+        
+        // Left Tunnel
+        this.drawOuterBigCorner(0,    19, "top-left");
+        this.drawOuterSmallCorner(5,  19, "bottom-right");
+        this.drawOuterSmallCorner(5,  15, "top-right");
+        this.ctx.lineTo(0, 16 * Board.tileSize - Board.halfLine);
+        this.ctx.moveTo(0, 13 * Board.tileSize + Board.halfLine);
+        this.drawOuterSmallCorner(5,  13, "bottom-right");
+        this.drawOuterSmallCorner(5,   9, "top-right");
+        this.drawOuterBigCorner(0,     9, "bottom-left");
+        
+        this.ctx.lineTo(Board.halfLine, Board.bigRadius + Board.halfLine);
+        this.ctx.stroke();
+    }
+    
