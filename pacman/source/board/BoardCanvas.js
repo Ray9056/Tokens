@@ -254,3 +254,64 @@ class BoardCanvas extends Canvas {
         this.ctx.restore();
     }
     
+    /**
+     * Draws an l shape at the given position
+     * @param {number} x
+     * @param {number} y
+     * @param {boolean} reflect
+     */
+    drawLShape(x, y, reflect) {
+        this.ctx.save();
+        this.ctx.translate(x * Board.tileSize, y * Board.tileSize);
+        
+        if (reflect) {
+            this.ctx.transform(-1, 0, 0, 1, 0, 0);
+            this.ctx.translate(-4 * Board.tileSize, 0);
+        }
+        
+        this.ctx.beginPath();
+        this.drawInnerCorner(0, 0, "top-left",     true,  false);
+        this.drawInnerCorner(3, 0, "top-right",    true,  false);
+        this.drawInnerCorner(3, 4, "bottom-right", true,  false);
+        this.drawInnerCorner(2, 4, "bottom-left",  true,  false);
+        this.drawInnerCorner(2, 1, "top-right",    false, true);
+        this.drawInnerCorner(0, 1, "bottom-left",  true,  false);
+        
+        this.ctx.stroke();
+        this.ctx.restore();
+    }
+    
+    
+    /**
+     * Draws a corner for the outer line with a big angle
+     * @param {number} x
+     * @param {number} y
+     * @param {string} type
+     */
+    drawOuterBigCorner(x, y, type) {
+        let data = this.corners[type],
+            pos  = {
+                x : x * Board.tileSize + Board.bigRadius + data.x * Board.halfLine,
+                y : y * Board.tileSize + Board.bigRadius + data.y * Board.halfLine
+            };
+        
+        this.corner(pos, Board.bigRadius, type, false);
+    }
+    
+    /**
+     * Draws a corner for the outer line with a small angle
+     * @param {number} x
+     * @param {number} y
+     * @param {string} type
+     */
+    drawOuterSmallCorner(x, y, type) {
+        let radius = this.corners[type],
+            data   = this.smallCorners[type],
+            pos    = {
+                x : (x + data.x.cell) * Board.tileSize + radius.x * Board.smallRadius + data.x.line * Board.halfLine,
+                y : (y + data.y.cell) * Board.tileSize + radius.y * Board.smallRadius + data.y.line * Board.halfLine
+            };
+        
+        this.corner(pos, Board.smallRadius, type, true);
+    }
+    
