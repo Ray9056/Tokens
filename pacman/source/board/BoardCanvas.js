@@ -315,3 +315,22 @@ class BoardCanvas extends Canvas {
         this.corner(pos, Board.smallRadius, type, true);
     }
     
+    /**
+     * Draws a corner for the board
+     * @param {number} x
+     * @param {number} y
+     * @param {string} type
+     * @param {boolean} isBig
+     * @param {boolean} anitclockwise
+     */
+    drawInnerCorner(x, y, type, isBig, anitclockwise) {
+        let radius = isBig ? Board.bigRadius : Board.smallRadius,
+            data   = this.corners[type],
+            pos    = {
+                x : (x + 0.5) * Board.tileSize + data.x * radius,
+                y : (y + 0.5) * Board.tileSize + data.y * radius
+            };
+        
+        this.corner(pos, radius, type, anitclockwise);
+    }
+    
