@@ -53,3 +53,48 @@ class BoardCanvas extends Canvas {
             }
         };
     }
+
+     /**
+     * Draw the Board
+     * @param {boolean} newLevel
+     */
+    drawBoard(newLevel) {
+        this.drawGhostsPen();
+        
+        this.ctx.save();
+        this.ctx.strokeStyle = newLevel ? "white" : Board.boardColor;
+        this.drawOuterBorder();
+        this.drawInnerBorder();
+        
+        // First Row
+        this.drawRectangle(2,  2,  4, 3);
+        this.drawRectangle(7,  2,  5, 3);
+        this.drawRectangle(16, 2,  5, 3);
+        this.drawRectangle(22, 2,  4, 3);
+        
+        // Second Row
+        this.drawRectangle(2,  6, 4, 2);
+        this.drawTShape(7,     6, 4, 4, "right");
+        this.drawTShape(10,    6, 4, 4, "down");
+        this.drawTShape(16,    6, 4, 4, "left");
+        this.drawRectangle(22, 6, 4, 2);
+        
+        // Third Row
+        this.drawRectangle(7,  15, 2, 5);
+        this.drawTShape(10,    18, 4, 4, "down");
+        this.drawRectangle(19, 15, 2, 5);
+        
+        // Fourth Row
+        this.drawLShape(2,     21, false);
+        this.drawRectangle(7,  21, 5, 2);
+        this.drawRectangle(16, 21, 5, 2);
+        this.drawLShape(22,    21, true);
+        
+        // Fith Row
+        this.drawTShape(2,  24, 4, 6, "up");
+        this.drawTShape(10, 24, 4, 4, "down");
+        this.drawTShape(16, 24, 6, 4, "up");
+        
+        this.ctx.restore();
+    }
+   
