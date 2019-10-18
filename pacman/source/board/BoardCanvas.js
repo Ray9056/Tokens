@@ -201,3 +201,56 @@ class BoardCanvas extends Canvas {
         this.ctx.stroke();
     }
     
+    /**
+     * Draws a drawRectangle at the given position with the given size
+     * @param {number} x
+     * @param {number} y
+     * @param {number} width
+     * @param {number} height
+     */
+    drawRectangle(x, y, width, height) {
+        this.ctx.save();
+        this.ctx.translate(x * Board.tileSize, y * Board.tileSize);
+        
+        this.ctx.beginPath();
+        this.drawInnerCorner(0,                  0, "top-left",     true, false);
+        this.drawInnerCorner(width - 1,          0, "top-right",    true, false);
+        this.drawInnerCorner(width - 1, height - 1, "bottom-right", true, false);
+        this.drawInnerCorner(0,         height - 1, "bottom-left",  true, false);
+        this.ctx.closePath();
+        
+        this.ctx.stroke();
+        this.ctx.restore();
+    }
+    
+    /**
+     * Draws a t shape at the given position and with the given properties
+     * @param {number} x
+     * @param {number} y
+     * @param {number} left
+     * @param {number} right
+     * @param {string} type
+     */
+    drawTShape(x, y, left, right, type) {
+        let data  = this.drawTShapes[type],
+            width = left + right;
+        
+        this.ctx.save();
+        this.ctx.translate(x * Board.tileSize, y * Board.tileSize);
+        this.ctx.rotate(data.radians * Math.PI);
+        this.ctx.translate(data.x * width * Board.tileSize, data.y * Board.tileSize);
+        
+        this.ctx.beginPath();
+        this.drawInnerCorner(0,         0, "top-left",     true,  false);
+        this.drawInnerCorner(width - 1, 0, "top-right",    true,  false);
+        this.drawInnerCorner(width - 1, 1, "bottom-right", true,  false);
+        this.drawInnerCorner(left,      1, "top-left",     false, true);
+        this.drawInnerCorner(left,      4, "bottom-right", true,  false);
+        this.drawInnerCorner(left - 1,  4, "bottom-left",  true,  false);
+        this.drawInnerCorner(left - 1,  1, "top-right",    false, true);
+        this.drawInnerCorner(0,         1, "bottom-left",  true,  false);
+        
+        this.ctx.stroke();
+        this.ctx.restore();
+    }
+    
