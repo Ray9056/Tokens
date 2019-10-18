@@ -151,3 +151,53 @@ class BoardCanvas extends Canvas {
         this.ctx.stroke();
     }
     
+    /**
+     * Draws the Board inner border
+     */
+    drawInnerBorder() {
+        this.ctx.beginPath();
+        
+        // Top Border
+        this.drawInnerCorner(0,   0, "top-left",     false, false);
+        this.drawInnerCorner(13,  0, "top-right",    false, false);
+        this.drawInnerCorner(13,  4, "bottom-left",  true,  true);
+        this.drawInnerCorner(14,  4, "bottom-right", true,  true);
+        this.drawInnerCorner(14,  0, "top-left",     false, false);
+        this.drawInnerCorner(27,  0, "top-right",    false, false);
+        
+        // Right Border
+        this.drawInnerCorner(27,  9, "bottom-right", false, false);
+        this.drawInnerCorner(22,  9, "top-left",     true,  true);
+        this.drawInnerCorner(22, 13, "bottom-left",  true,  true);
+        this.ctx.lineTo(28 * Board.tileSize, 13.5 * Board.tileSize);
+        this.ctx.moveTo(28 * Board.tileSize, 15.5 * Board.tileSize);
+        this.drawInnerCorner(22, 15, "top-left",     true,  true);
+        this.drawInnerCorner(22, 19, "bottom-left",  true,  true);
+        this.drawInnerCorner(27, 19, "top-right",    false, false);
+        this.drawInnerCorner(27, 24, "bottom-right", false, false);
+        this.drawInnerCorner(25, 24, "top-left",     true,  true);
+        this.drawInnerCorner(25, 25, "bottom-left",  true,  true);
+        this.drawInnerCorner(27, 25, "top-right",    false, false);
+        
+        // Bottom Border
+        this.drawInnerCorner(27, 30, "bottom-right", false, false);
+        this.drawInnerCorner(0,  30, "bottom-left",  false, false);
+        
+        // Left Border
+        this.drawInnerCorner(0,  25, "top-left",     false, false);
+        this.drawInnerCorner(2,  25, "bottom-right", true,  true);
+        this.drawInnerCorner(2,  24, "top-right",    true,  true);
+        this.drawInnerCorner(0,  24, "bottom-left",  false, false);
+        this.drawInnerCorner(0,  19, "top-left",     false, false);
+        this.drawInnerCorner(5,  19, "bottom-right", true,  true);
+        this.drawInnerCorner(5,  15, "top-right",    true,  true);
+        this.ctx.lineTo(0, 15.5 * Board.tileSize);
+        this.ctx.moveTo(0, 13.5 * Board.tileSize);
+        this.drawInnerCorner(5,  13, "bottom-right", true,  true);
+        this.drawInnerCorner(5,   9, "top-right",    true,  true);
+        this.drawInnerCorner(0,   9, "bottom-left",  false, false);
+        this.ctx.lineTo(Board.tileSize / 2, Board.tileSize / 2 + Board.smallRadius);
+        
+        this.ctx.stroke();
+    }
+    
