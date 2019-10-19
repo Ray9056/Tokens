@@ -23,3 +23,26 @@ class Canvas {
         
         return this;
     }
+
+    /**
+     * Returns the conetext for the board element
+     * @return {RenderingContext}
+     */
+    get context() {
+        return this.ctx;
+    }
+    
+    /**
+     * Fills the canvas with black at the given alpha value
+     * @param {number} alpha
+     * @param {number=} x
+     * @param {number=} y
+     * @param {number=} width
+     * @param {number=} height
+     */
+    fill(alpha, x, y, width, height) {
+        this.ctx.save();
+        this.ctx.fillStyle = "rgba(0, 0, 0, " + alpha + ")";
+        this.ctx.fillRect(x || 0, y || 0, width || Board.width, height || Board.height);
+        this.ctx.restore();
+    }
