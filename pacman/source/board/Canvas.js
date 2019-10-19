@@ -46,3 +46,12 @@ class Canvas {
         this.ctx.fillRect(x || 0, y || 0, width || Board.width, height || Board.height);
         this.ctx.restore();
     }
+
+    /**
+     * Clear the entire board
+     */
+    clear() {
+        this.ctx.clearRect(0, 0, Board.width, Board.height);
+        this.rects = [];
+    }
+    
