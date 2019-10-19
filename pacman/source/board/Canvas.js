@@ -55,3 +55,17 @@ class Canvas {
         this.rects = [];
     }
     
+     /**
+     * Clears only the saved rects
+     */
+    clearSavedRects() {
+        this.rects.forEach((rect) => {
+            this.ctx.clearRect(rect.x, rect.y, rect.width, rect.height);
+            if (rect.alpha) {
+                this.fill(rect.alpha, rect.x, rect.y, rect.width, rect.height);
+            }
+        });
+        this.rects = [];
+    }
+   
+    
