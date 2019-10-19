@@ -90,4 +90,35 @@ class Canvas {
         this.rects.push(data);
     }
 
-    
+    /**
+     * Draws the Text in the canvas
+     * @param {{text: string, pos: {x: number, y: number}, color: string, size: ?numer, align: ?string}} data
+     */
+    drawText(data) {
+        let metrics, width, height, mult = 0.5;
+        
+        this.ctx.save();
+        if (data.size) {
+            this.ctx.font = data.size + "em 'Whimsy TT'";
+        }
+        if (data.align) {
+            this.ctx.textAlign = data.align;
+            mult = data.align === "left" ? 1 : 0;
+        }
+        this.ctx.fillStyle = data.color;
+        this.ctx.fillText(data.text, data.pos.x * Board.tileSize, data.pos.y * Board.tileSize);
+        this.ctx.restore();
+        
+        metrics = this.ctx.measureText(data.text);
+        width   = metrics.width + Board.tileSize;
+        height  = data.size ? (data.size + 0.5) * Board.tileSize : 2.5 * Board.tileSize;
+        
+        this.saveRect({
+            x      : data.pos.x * Board.tileSize - mult * width,
+            y      : data.pos.y * Board.tileSize - height / 2,
+            width  : width,
+            height : height,
+            alpha  : data.alpha || 0
+        });
+    }
+}
