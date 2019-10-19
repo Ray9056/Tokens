@@ -68,4 +68,16 @@ class Canvas {
         this.rects = [];
     }
    
-    
+    /**
+     * Saves a new position to clear in the future
+     * @param {number} x
+     * @param {number} y
+     */
+    savePos(x, y) {
+        this.rects.push({
+            x      : x - Board.eraseSize / 2,
+            y      : y - Board.eraseSize / 2,
+            width  : Board.eraseSize,
+            height : Board.eraseSize
+        });
+    }
