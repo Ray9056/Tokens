@@ -2,25 +2,25 @@
  * The Canvas Base Class
  */
 class Canvas {
-    
+
     /**
      * Initializes the Canvas Object
      * @param {string} name
      * @return {Canvas}
      */
     init(name) {
-        let canvas    = document.querySelector("." + name);
-        canvas.width  = Board.width;
+        let canvas = document.querySelector("." + name);
+        canvas.width = Board.width;
         canvas.height = Board.height;
-        
-        this.ctx              = canvas.getContext("2d");
-        this.ctx.font         = "2em 'Whimsy TT'";
-        this.ctx.fillStyle    = "white";
-        this.ctx.textAlign    = "center";
+
+        this.ctx = canvas.getContext("2d");
+        this.ctx.font = "2em 'Whimsy TT'";
+        this.ctx.fillStyle = "white";
+        this.ctx.textAlign = "center";
         this.ctx.textBaseline = "middle";
-        
-        this.rects            = [];
-        
+
+        this.rects = [];
+
         return this;
     }
 
@@ -31,7 +31,7 @@ class Canvas {
     get context() {
         return this.ctx;
     }
-    
+
     /**
      * Fills the canvas with black at the given alpha value
      * @param {number} alpha
@@ -54,8 +54,8 @@ class Canvas {
         this.ctx.clearRect(0, 0, Board.width, Board.height);
         this.rects = [];
     }
-    
-     /**
+
+    /**
      * Clears only the saved rects
      */
     clearSavedRects() {
@@ -67,7 +67,7 @@ class Canvas {
         });
         this.rects = [];
     }
-   
+
     /**
      * Saves a new position to clear in the future
      * @param {number} x
@@ -75,10 +75,10 @@ class Canvas {
      */
     savePos(x, y) {
         this.rects.push({
-            x      : x - Board.eraseSize / 2,
-            y      : y - Board.eraseSize / 2,
-            width  : Board.eraseSize,
-            height : Board.eraseSize
+            x: x - Board.eraseSize / 2,
+            y: y - Board.eraseSize / 2,
+            width: Board.eraseSize,
+            height: Board.eraseSize
         });
     }
 
@@ -96,7 +96,7 @@ class Canvas {
      */
     drawText(data) {
         let metrics, width, height, mult = 0.5;
-        
+
         this.ctx.save();
         if (data.size) {
             this.ctx.font = data.size + "em 'Whimsy TT'";
@@ -108,17 +108,17 @@ class Canvas {
         this.ctx.fillStyle = data.color;
         this.ctx.fillText(data.text, data.pos.x * Board.tileSize, data.pos.y * Board.tileSize);
         this.ctx.restore();
-        
+
         metrics = this.ctx.measureText(data.text);
-        width   = metrics.width + Board.tileSize;
-        height  = data.size ? (data.size + 0.5) * Board.tileSize : 2.5 * Board.tileSize;
-        
+        width = metrics.width + Board.tileSize;
+        height = data.size ? (data.size + 0.5) * Board.tileSize : 2.5 * Board.tileSize;
+
         this.saveRect({
-            x      : data.pos.x * Board.tileSize - mult * width,
-            y      : data.pos.y * Board.tileSize - height / 2,
-            width  : width,
-            height : height,
-            alpha  : data.alpha || 0
+            x: data.pos.x * Board.tileSize - mult * width,
+            y: data.pos.y * Board.tileSize - height / 2,
+            width: width,
+            height: height,
+            alpha: data.alpha || 0
         });
     }
 }
