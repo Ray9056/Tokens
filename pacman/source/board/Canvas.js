@@ -81,3 +81,13 @@ class Canvas {
             height : Board.eraseSize
         });
     }
+
+    /**
+     * Saves a new rectangle to clear in the future
+     * @param {{x: number, y: number, width: number, height: number, alpha: ?number}} data
+     */
+    saveRect(data) {
+        this.rects.push(data);
+    }
+
+    
