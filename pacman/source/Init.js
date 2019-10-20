@@ -201,3 +201,11 @@
             animations.paused();
         }
     }
+
+     /**
+     * Show the High Scores
+     */
+    function showHighScores() {
+        display.set("highScores").show();
+        scores.show();
+    }
