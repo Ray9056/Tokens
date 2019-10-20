@@ -79,3 +79,18 @@
         }
         blob.onEat(atPill, ghosts.areFrighten());
     }
+
+    /**
+     * Called to do the crash etween a ghost and th blob
+     */
+    function ghostCrash() {
+        ghosts.crash(blob.getTile(), (eyesCounter, tile) => {
+            let text = score.kill(eyesCounter);
+            animations.ghostScore(text, tile);
+            sounds.kill();
+        }, () => {
+            Board.clearGame();
+            animations.death(blob, newLife);
+            sounds.death();
+        });
+    }
