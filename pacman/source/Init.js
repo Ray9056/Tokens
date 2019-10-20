@@ -265,3 +265,30 @@
             }
         };
     }
+
+    /**
+     * Stores the used DOM elements and initializes the Event Handlers
+     */
+    function initDomListeners() {
+        document.body.addEventListener("click", (e) => {
+            let element = Utils.getTarget(e);
+            if (actions[element.dataset.action]) {
+                actions[element.dataset.action](element.dataset.data || undefined);
+                e.preventDefault();
+            }
+        });
+        
+        document.addEventListener("keydown", (e) => {
+            var key  = e.keyCode,
+                code = specialKeys[key] || String.fromCharCode(key);
+            
+            if (shortcuts[display.get()] && shortcuts[display.get()][code]) {
+                if (typeof shortcuts[display.get()][code] === "string") {
+                    actions[shortcuts[display.get()][code]]();
+                } else {
+                    shortcuts[display.get()][code]();
+                }
+                e.preventDefault();
+            }
+        });
+    }
