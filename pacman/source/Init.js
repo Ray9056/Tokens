@@ -121,3 +121,42 @@
             createPlayers(false);
         });
     }
+
+    /**
+     * Request an animation frame
+     */
+    function requestAnimation() {
+        startTime = new Date().getTime();
+        animation = window.requestAnimationFrame(() => {
+            let time  = new Date().getTime() - startTime,
+                speed = time / 16;
+            
+            if (speed > 5) {
+                return requestAnimation();
+            }
+            
+            if (display.isMainScreen()) {
+                demo.animate(time, speed);
+            } else if (animations.isAnimating()) {
+                animations.animate(time);
+            } else if (display.isPlaying()) {
+                Board.clearGame();
+                food.wink();
+                fruit.reduceTimer(time);
+                ghosts.animate(time, speed, blob);
+                let newTile = blob.animate(speed);
+                animations.animate(time);
+                
+                if (newTile) {
+                    ghosts.setTargets(blob);
+                    blobEating();
+                }
+                if (food.getLeftPills() === 0) {
+                    score.newLevel();
+                    animations.endLevel(newLevel);
+                }
+                ghostCrash();
+            }
+            requestAnimation();
+        });
+    }
