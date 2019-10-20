@@ -188,3 +188,16 @@
         requestAnimation();
         sounds.start();
     }
+
+    /**
+     * Toggles the Game Pause
+     */
+    function togglePause() {
+        if (display.isPaused()) {
+            display.set("playing");
+            animations.endAll();
+        } else {
+            display.set("paused");
+            animations.paused();
+        }
+    }
