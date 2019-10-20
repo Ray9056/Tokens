@@ -106,3 +106,18 @@
             createPlayers(true);
         }
     }
+
+    /**
+     * Called after we get to a new level
+     */
+    function newLevel() {
+        animations.newLevel(score.getLevel(), () => {
+            food  = new Food();
+            fruit = new Fruit();
+            
+            Board.clearGame();
+            food.draw();
+            score.draw();
+            createPlayers(false);
+        });
+    }
