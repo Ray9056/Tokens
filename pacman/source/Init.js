@@ -209,3 +209,14 @@
         display.set("highScores").show();
         scores.show();
     }
+
+    /**
+     * Saves the High Score
+     */
+    function saveHighScore() {
+        if (scores.save(score.getLevel(), score.getScore())) {
+            showHighScores();
+        }
+    }
+
+    
