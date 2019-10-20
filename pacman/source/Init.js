@@ -94,3 +94,15 @@
             sounds.death();
         });
     }
+
+    /**
+     * Called after the Blob dies
+     */
+    function newLife() {
+        if (!score.died()) {
+            gameOver();
+        } else {
+            display.set("ready");
+            createPlayers(true);
+        }
+    }
