@@ -167,3 +167,24 @@
     function cancelAnimation() {
         window.cancelAnimationFrame(animation);
     }
+
+     /**
+     * Starts a new Game
+     */
+    function newGame() {
+        display.set("ready").show();
+        cancelAnimation();
+        
+        score = new Score();
+        food  = new Food();
+        fruit = new Fruit();
+        
+        demo.destroy();
+        Board.drawBoard();
+        food.draw();
+        score.draw();
+        
+        createPlayers(false);
+        requestAnimation();
+        sounds.start();
+    }
