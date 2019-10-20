@@ -160,3 +160,10 @@
             requestAnimation();
         });
     }
+
+    /**
+     * Cancel an animation frame
+     */
+    function cancelAnimation() {
+        window.cancelAnimationFrame(animation);
+    }
