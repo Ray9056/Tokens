@@ -219,4 +219,49 @@
         }
     }
 
-    
+    /**
+     * Creates a shortcut object
+     */
+    function createActionsShortcuts() {
+        actions = {
+            play       : () => newGame(),
+            highScores : () => showHighScores(),
+            help       : () => display.set("help").show(),
+            sound      : () => sounds.toggle(),
+            save       : () => saveHighScore(),
+            retore     : () => scores.restore(),
+            mainScreen : () => display.set("mainScreen").show()
+        };
+        
+        shortcuts = {
+            mainScreen : {
+                Enter : "play",
+                Down  : "play",
+                H     : "highScores",
+                C     : "help",
+                M     : "sound"
+            },
+            playing : {
+                P     : () => togglePause(),
+                M     : () => sounds.toggle(),
+                Left  : () => blob.makeTurn({ x: -1, y:  0 }),
+                Up    : () => blob.makeTurn({ x:  0, y: -1 }),
+                Right : () => blob.makeTurn({ x:  1, y:  0 }),
+                Down  : () => blob.makeTurn({ x:  0, y:  1 })
+            },
+            paused : {
+                P     : () => togglePause()
+            },
+            gameOver : {
+                Enter : () => saveHighScore(),
+                B     : () => display.set("mainScreen").show()
+            },
+            highScores : {
+                B     : () => display.set("mainScreen").show(),
+                R     : () => scores.restore()
+            },
+            help : {
+                B     : () => display.set("mainScreen").show()
+            }
+        };
+    }
