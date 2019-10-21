@@ -292,3 +292,12 @@
             }
         });
     }
+
+    /**
+     * Destroys the demo when the display changes
+     */
+    function onShow() {
+        if (!display.isMainScreen()) {
+            demo.destroy();
+        }
+    }
