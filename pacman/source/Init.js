@@ -301,3 +301,21 @@
             demo.destroy();
         }
     }
+
+    /**
+     * The main Function
+     */
+    function main() {
+        Board.create();
+        display    = new Display(onShow);
+        demo       = new Demo();
+        animations = new Animations();
+        sounds     = new Sounds(soundFiles, "pacman.sound", true);
+        scores     = new HighScores();
+        
+        createActionsShortcuts();
+        initDomListeners();
+        requestAnimation();
+    }
+    
+}());
