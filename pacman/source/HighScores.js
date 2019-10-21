@@ -18,4 +18,17 @@ class HighScores {
         this.input.onfocus = () => this.focused = true;
         this.input.onblur  = () => this.focused = false;
     }
+
+     /**
+     * Show the Scores for the given mode
+     */
+    show() {
+        this.scores.innerHTML = "";
+        this.showHideNone(this.total === 0);
+        
+        if (this.total > 0) {
+            this.displayTitles();
+            this.displayScores();
+        }
+    }
 }
