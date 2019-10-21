@@ -1,0 +1,21 @@
+/**
+ * The Game High Scores
+ */
+class HighScores {
+    
+    /**
+     * The Game High Scores constructor
+     */
+    constructor() {
+        this.input     = document.querySelector(".input input");
+        this.scores    = document.querySelector(".scores");
+        this.none      = document.querySelector(".none");
+        this.data      = new Storage("pacman.hs");
+        this.total     = this.data.get("total") || 0;
+        this.focused   = false;
+        this.maxScores = 10;
+        
+        this.input.onfocus = () => this.focused = true;
+        this.input.onblur  = () => this.focused = false;
+    }
+}
