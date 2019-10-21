@@ -54,5 +54,7 @@ class HighScores {
         }
     }
 
-    
+    /**
+     * TODO: Creates the content for each High Score
+     */
 }
