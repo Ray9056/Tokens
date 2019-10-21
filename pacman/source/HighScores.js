@@ -41,5 +41,18 @@ class HighScores {
         this.scores.appendChild(div);
     }
 
+    /**
+     * Create each score line and place it in the DOM
+     */
+    displayScores() {
+        for (let i = 1; i <= this.total; i += 1) {
+            let data = this.data.get(i),
+                div  = this.createContent(data.name, data.level, Utils.formatNumber(data.score, ","));
+            
+            div.className = "highScore";
+            this.scores.appendChild(div);
+        }
+    }
+
     
 }
