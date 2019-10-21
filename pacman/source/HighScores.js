@@ -31,4 +31,15 @@ class HighScores {
             this.displayScores();
         }
     }
+
+    /**
+     * Create the titles and place it in the DOM
+     */
+    displayTitles() {
+        let div = this.createContent("name", "lvl", "score");
+        div.className = "titles";
+        this.scores.appendChild(div);
+    }
+
+    
 }
