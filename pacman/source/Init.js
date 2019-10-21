@@ -317,5 +317,8 @@
         initDomListeners();
         requestAnimation();
     }
-    
+
+    // Load the game
+    window.addEventListener("load", main, false);
+
 }());
