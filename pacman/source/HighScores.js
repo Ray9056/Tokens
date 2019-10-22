@@ -68,5 +68,17 @@ class HighScores {
         return element;
     }
 
-    
+    /**
+     * Tries to save a score, when possible
+     * @param {number} level
+     * @param {number} score
+     * @return {boolean}
+     */
+    save(level, score) {
+        if (this.input.value) {
+            this.saveData(level, score);
+            return true;
+        }
+        return false;
+    }
 }
