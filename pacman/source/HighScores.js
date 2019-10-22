@@ -136,5 +136,13 @@ class HighScores {
         this.none.style.display = show ? "block" : "none";
     }
 
+    /**
+     * Sets the input value and focus it
+     */
+    setInput() {
+        this.input.value = "";
+        this.input.focus();
+    }
+
     
 }
