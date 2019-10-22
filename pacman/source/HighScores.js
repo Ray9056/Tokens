@@ -55,6 +55,18 @@ class HighScores {
     }
 
     /**
-     * TODO: Creates the content for each High Score
+     * Creates the content for each High Score
      */
+
+    createContent(name, level, score) {
+        let namer   = "<div class='left'>"   + name  + "</div>",
+            lvler   = "<div class='middle'>" + level + "</div>",
+            screr   = "<div class='right'>"  + score + "</div>",
+            element = document.createElement("DIV");
+        
+        element.innerHTML = namer + lvler + screr;
+        return element;
+    }
+
+    
 }
