@@ -81,4 +81,39 @@ class HighScores {
         }
         return false;
     }
+
+    /**
+     * Gets the scores and adds the new one in the right position, updating the total, when possible
+     * @param {number} level
+     * @param {number} score
+     */
+    saveData(level, score) {
+        let data   = [],
+            saved  = false,
+            actual = {
+                name  : this.input.value,
+                level : level,
+                score : score
+            };
+        
+        for (let i = 1; i <= this.total; i += 1) {
+            let hs = this.data.get(i);
+            if (!saved && hs.score < actual.score) {
+                data.push(actual);
+                saved = true;
+            }
+            if (data.length < this.maxScores) {
+                data.push(hs);
+            }
+        }
+        if (!saved && data.length < this.maxScores) {
+            data.push(actual);
+        }
+        
+        this.data.set("total", data.length);
+        data.forEach((element, index) => {
+            this.data.set(index + 1, element);
+        });
+        this.total = data.length;
+    }
 }
