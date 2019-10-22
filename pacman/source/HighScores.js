@@ -116,4 +116,25 @@ class HighScores {
         });
         this.total = data.length;
     }
+
+    /**
+     * Deletes all the Scores
+     */
+    restore() {
+        for (let i = 1; i <= this.total; i += 1) {
+            this.data.remove(i);
+        }
+        this.data.set("total", 0);
+        this.show();
+    }
+
+    /**
+     * Shows or hides the no results element
+     * @param {boolean} show
+     */
+    showHideNone(show) {
+        this.none.style.display = show ? "block" : "none";
+    }
+
+    
 }
