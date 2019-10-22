@@ -144,5 +144,11 @@ class HighScores {
         this.input.focus();
     }
 
-    
+    /**
+     * Returns true if the input is focus
+     * @return {boolean}
+     */
+    isFocused() {
+        return this.focused;
+    }
 }
