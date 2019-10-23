@@ -187,5 +187,25 @@ class Blob {
         }
     }
 
+    /**
+     * Draws a Blob with the given data
+     */
+    draw() {
+        let values = [ 0, 0.2, 0.4, 0.2 ],
+            mouth  = Math.floor(this.mouth / 5),
+            delta  = values[mouth];
+        
+        this.savePos();
+        this.ctx.save();
+        this.ctx.fillStyle = "rgb(255, 255, 51)";
+        this.ctx.translate(Math.round(this.x), Math.round(this.y));
+        this.ctx.rotate(this.getAngle());
+        this.ctx.beginPath();
+        this.ctx.arc(0, 0, this.radius, (1 + delta) * Math.PI, (3 - delta) * Math.PI);
+        this.ctx.lineTo(Math.round(this.radius / 3), 0);
+        this.ctx.fill();
+        this.ctx.restore();
+    }
+
     
 }
