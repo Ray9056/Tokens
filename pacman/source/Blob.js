@@ -67,5 +67,12 @@ class Blob {
         return newTile;
     }
 
+    /**
+     * Changes the state of the Blob's mouth
+     */
+    moveMouth() {
+        this.mouth = (this.mouth + 1) % 20;
+    }
+
     
 }
