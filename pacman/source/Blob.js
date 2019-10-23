@@ -10,4 +10,27 @@ class Blob {
         this.init(Board.gameCanvas);
     }
 
+    /**
+     * Initializes the Blob
+     * @param {Canvas} canvas
+     */
+    init(canvas) {
+        this.canvas     = canvas;
+        this.ctx        = canvas.context;
+        
+        this.tile       = Board.startingPos;
+        this.tileCenter = Board.getTileXYCenter(this.tile);
+        this.x          = this.tileCenter.x;
+        this.y          = this.tileCenter.y;
+        this.dir        = Board.startingDir;
+        this.speed      = Data.getLevelData("pmSpeed");
+        this.center     = true;
+        this.turn       = null;
+        this.delta      = null;
+        this.mouth      = 5;
+        this.radius     = Board.blobRadius;
+        this.sound      = 1;
+    }
+
+
 }
