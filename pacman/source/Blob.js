@@ -49,5 +49,23 @@ class Blob {
         this.draw();
         return newTile;
     }
+
+    /**
+     * Moves the Blob
+     * @param {number} speed
+     * @return {boolean}
+     */
+    move(speed) {
+        this.x += this.dir.x * this.speed * speed;
+        this.y += this.dir.y * this.speed * speed;
+        
+        this.moveMouth();
+        this.newTile();
+        let newTile = this.atCenter();
+        
+        this.x = Board.tunnelEnds(this.x);
+        return newTile;
+    }
+
     
 }
