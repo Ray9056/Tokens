@@ -142,5 +142,24 @@ class Blob {
         return false;
     }
 
+    /**
+     * Eats food (dots, energizers, fruits)
+     * @param {boolean} atPill
+     * @param {boolean} frightenGhosts
+     */
+    onEat(atPill, frightenGhosts) {
+        if (!atPill) {
+            this.sound = 1;
+        }
+        
+        let key;
+        if (frightenGhosts) {
+            key = atPill ? "eatingFrightSpeed" : "pmFrightSpeed";
+        } else {
+            key = atPill ? "eatingSpeed" : "pmSpeed";
+        }
+        this.speed = Data.getLevelData(key);
+    }
+
     
 }
