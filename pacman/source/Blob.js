@@ -170,5 +170,22 @@ class Blob {
         return this.sound ? "eat2" : "eat1";
     }
 
+    /**
+     * New direction (given by the user)
+     * @param {{x: number, y: number}} turn
+     */
+    makeTurn(turn) {
+        if (this.delta) {
+            return;
+        }
+        if (this.turnNow(turn)) {
+            this.dir    = turn;
+            this.turn   = null;
+            this.center = false;
+        } else {
+            this.turn = turn;
+        }
+    }
+
     
 }
