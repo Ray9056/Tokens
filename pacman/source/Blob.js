@@ -207,5 +207,12 @@ class Blob {
         this.ctx.restore();
     }
 
+    /**
+     * Saves the Blob's position to delete clear it before the next animation
+     */
+    savePos() {
+        this.canvas.savePos(this.x, this.y);
+    }
+
     
 }
