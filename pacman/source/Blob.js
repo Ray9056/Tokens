@@ -93,5 +93,28 @@ class Blob {
         }
     }
 
-    
+    /**
+     * Does the turning or wall crash when the Blob is at, or just passed, the center of a tile
+     * @return {boolean}
+     */
+    atCenter() {
+        if (!this.center && this.passedCenter()) {
+            let turn = false;
+            if (this.turn && this.inBoard(this.turn) && !this.isWall(this.turn)) {
+                this.dir  = this.turn;
+                this.turn = null;
+                turn      = true;
+            }
+            if (turn || this.crashed()) {
+                this.x = this.tileCenter.x;
+                this.y = this.tileCenter.y;
+            }
+            this.center = true;
+            
+            return true;
+        }
+        return false;
+    }
+
+
 }
