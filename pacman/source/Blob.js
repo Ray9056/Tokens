@@ -161,5 +161,14 @@ class Blob {
         this.speed = Data.getLevelData(key);
     }
 
+    /**
+     * Returns the apropiate sound effect
+     * @return {string}
+     */
+    getSound() {
+        this.sound = (this.sound + 1) % 2;
+        return this.sound ? "eat2" : "eat1";
+    }
+
     
 }
