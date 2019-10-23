@@ -116,5 +116,31 @@ class Blob {
         return false;
     }
 
+    /**
+     * Does a faster turn by turnning a bit before the corner.
+     * Only when a turn is asked before reaching an intersection
+     * @param {number} speed
+     * @return {boolean}
+     */
+    cornering(speed) {
+        this.x += this.delta.x * this.speed * speed;
+        this.y += this.delta.y * this.speed * speed;
+        
+        if (this.passedCenter()) {
+            if (this.dir.x) {
+                this.x = this.tileCenter.x;
+            }
+            if (this.dir.y) {
+                this.y = this.tileCenter.y;
+            }
+            this.dir   = this.turn;
+            this.turn  = null;
+            this.delta = null;
+            
+            return true;
+        }
+        return false;
+    }
 
+    
 }
