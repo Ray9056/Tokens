@@ -74,5 +74,24 @@ class Blob {
         this.mouth = (this.mouth + 1) % 20;
     }
 
+    /**
+     * The Blob might have entered a new Tile, and several things might need to be done
+     */
+    newTile() {
+        let tile = Board.getTilePos(this.x, this.y);
+        if (!Board.equalTiles(this.tile, tile)) {
+            this.tile       = tile;
+            this.tileCenter = Board.getTileXYCenter(tile);
+            this.center     = false;
+            
+            if (this.turn && this.inBoard(this.turn) && !this.isWall(this.turn)) {
+                this.delta = {
+                    x : this.dir.x || this.turn.x,
+                    y : this.dir.y || this.turn.y
+                };
+            }
+        }
+    }
+
     
 }
