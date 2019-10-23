@@ -32,5 +32,22 @@ class Blob {
         this.sound      = 1;
     }
 
-
+/**
+     * Animates the Blob
+     * @param {number} speed
+     * @return {boolean}
+     */
+    animate(speed) {
+        let newTile = false;
+        if (this.center && this.crashed()) {
+            this.mouth = 5;
+        } else if (this.delta) {
+            newTile = this.cornering(speed);
+        } else {
+            newTile = this.move(speed);
+        }
+        this.draw();
+        return newTile;
+    }
+    
 }
