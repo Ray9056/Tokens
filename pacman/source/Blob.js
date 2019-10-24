@@ -214,5 +214,18 @@ class Blob {
         this.canvas.savePos(this.x, this.y);
     }
 
-    
+    /**
+     * Draws the next step in the Blob's death animation
+     * @param {Context} ctx
+     * @param {number}  count
+     */
+    drawDeath(ctx, count) {
+        let delta = count / 50;
+        
+        ctx.fillStyle = "rgb(255, 255, 51)";
+        ctx.beginPath();
+        ctx.arc(0, 0, this.radius, (1.5 - delta) * Math.PI, (1.5 + delta) * Math.PI, true);
+        ctx.lineTo(0, 0);
+        ctx.fill();
+    }
 }
