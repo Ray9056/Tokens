@@ -297,5 +297,23 @@ class Blob {
         return Board.inBoard(tile.x, tile.y);
     }
 
+    /**
+     * Returns the angle of the Blob using its direction
+     * @return {number}
+     */
+    getAngle() {
+        let angle;
+        if (this.dir.x === -1) {
+            angle = 0;
+        } else if (this.dir.x ===  1) {
+            angle = Math.PI;
+        } else if (this.dir.y === -1) {
+            angle = 0.5 * Math.PI;
+        } else if (this.dir.y ===  1) {
+            angle = 1.5 * Math.PI;
+        }
+        return angle;
+    }
+    
     
 }
