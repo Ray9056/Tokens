@@ -332,5 +332,11 @@ class Blob {
         return this.y;
     }
 
-    
+    /**
+     * Returns the Blob direction
+     * @return {{x: number, y: number}}
+     */
+    getDir() {
+        return this.dir;
+    }
 }
