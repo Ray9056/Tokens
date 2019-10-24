@@ -277,5 +277,15 @@ class Blob {
         );
     }
 
+    /**
+     * Returns true if the next tile is a wall
+     * @param {{x: number, y: number}}
+     * @return {boolean}
+     */
+    isWall(turn) {
+        let tile = Board.sumTiles(this.tile, turn);
+        return Board.isWall(tile.x, tile.y);
+    }
+
     
 }
