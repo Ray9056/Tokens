@@ -228,4 +228,21 @@ class Blob {
         ctx.lineTo(0, 0);
         ctx.fill();
     }
+
+    /**
+     * Draws a circle as the next step in the Blob Death animation
+     * @param {Context} ctx
+     * @param {number}  count
+     */
+    drawCircle(ctx, count) {
+        let radius = Math.round(count / 2);
+        
+        ctx.strokeStyle = "rgb(159, 159, 31)";
+        ctx.lineWidth   = 3;
+        ctx.beginPath();
+        ctx.arc(0, 0, radius, 0, 2 * Math.PI, true);
+        ctx.stroke();
+    }
+
+    
 }
