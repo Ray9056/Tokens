@@ -265,5 +265,17 @@ class Blob {
         );
     }
 
+    /**
+     * Returns true if the Blob has to turn now
+     * @param {{x: number, y: number}}
+     * @return {boolean}
+     */
+    turnNow(turn) {
+        return (
+            (!this.dir.x && !turn.x) || (!this.dir.y && !turn.y) ||  // Half Turn
+            (this.center && this.crashed() && this.inBoard(turn) && !this.isWall(turn))    // Crash Turn
+        );
+    }
+
     
 }
