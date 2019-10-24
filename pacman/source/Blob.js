@@ -244,5 +244,13 @@ class Blob {
         ctx.stroke();
     }
 
+    /**
+     * Returns true if the Blob crashed with a wall
+     * @return {boolean}
+     */
+    crashed() {
+        return this.inBoard(this.dir) && this.isWall(this.dir);
+    }
+
     
 }
