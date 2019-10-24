@@ -315,5 +315,14 @@ class Blob {
         return angle;
     }
     
+    /**
+     * Returns the Blob x position
+     * @return {number}
+     */
+    getX() {
+        return this.x;
+    }
+
+
     
 }
