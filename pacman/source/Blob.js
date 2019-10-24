@@ -252,5 +252,18 @@ class Blob {
         return this.inBoard(this.dir) && this.isWall(this.dir);
     }
 
+    /**
+     * Returns true if the Blob has passed the center of the currrent tile
+     * @return {boolean}
+     */
+    passedCenter() {
+        return (
+            (this.dir.x ===  1 && this.x >= this.tileCenter.x) ||
+            (this.dir.x === -1 && this.x <= this.tileCenter.x) ||
+            (this.dir.y ===  1 && this.y >= this.tileCenter.y) ||
+            (this.dir.y === -1 && this.y <= this.tileCenter.y)
+        );
+    }
+
     
 }
