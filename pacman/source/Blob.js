@@ -324,5 +324,13 @@ class Blob {
     }
 
 
+    /**
+     * Returns the Blob y position
+     * @return {number}
+     */
+    getY() {
+        return this.y;
+    }
+
     
 }
