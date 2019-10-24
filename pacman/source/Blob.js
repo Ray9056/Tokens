@@ -339,4 +339,12 @@ class Blob {
     getDir() {
         return this.dir;
     }
+
+    /**
+     * Returns the Blob tile
+     * @return {{x: number, y: number}}
+     */
+    getTile() {
+        return this.tile;
+    }
 }
