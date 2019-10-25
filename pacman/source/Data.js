@@ -102,5 +102,25 @@ let Data = (function (){
             penForceTime      : 3,
             penLeavingLimit   : [ 0, 0, 0, 0 ]
         },
+        { // 6
+            ghostSpeed        : 0.95,
+            tunnelSpeed       : 0.5,
+            pmSpeed           : 1,
+            eatingSpeed       : 0.87,
+            ghostFrightSpeed  : 0.6,
+            pmFrightSpeed     : 1,
+            eatingFrightSpeed : 0.87,
+            elroyDotsLeft1    : 50,
+            elroySpeed1       : 1,
+            elroyDotsLeft2    : 25,
+            elroySpeed2       : 10.05,
+            fruitType         : 4,
+            fruitScore        : 700,
+            frightTime        : 5,
+            frightBlinks      : 5,
+            switchTimes       : [ 5, 20, 5, 20, 5, 1037, 1 / 60, 1 ],
+            penForceTime      : 3,
+            penLeavingLimit   : [ 0, 0, 0, 0 ]
+        }
     ]
 }());
