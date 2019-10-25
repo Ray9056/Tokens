@@ -21,6 +21,29 @@ let Data = (function (){
             switchTimes       : [ 7, 20, 7, 20, 5, 20, 5, 1 ],  // The times between scatter, chase, scatter... modes
             penForceTime      : 4,                              // The time after a ghost leaves the pen while the pacman is not eating dots
             penLeavingLimit   : [ 0, 0, 30, 60 ]                // Amount of dots before each ghost leaves the pen
+        },
+        { // 2
+            ghostSpeed        : 0.85,
+            tunnelSpeed       : 0.45,
+            pmSpeed           : 0.9,
+            eatingSpeed       : 0.79,
+            ghostFrightSpeed  : 0.55,
+            pmFrightSpeed     : 0.95,
+            eatingFrightSpeed : 0.83,
+            elroyDotsLeft1    : 30,
+            elroySpeed1       : 0.9,
+            elroyDotsLeft2    : 15,
+            elroySpeed2       : 0.95,
+            fruitType         : 2,
+            fruitScore        : 300,
+            frightTime        : 5,
+            frightBlinks      : 5,
+            switchTimes       : [ 7, 20, 7, 20, 5, 1033, 1 / 60, 1 ],
+            penForceTime      : 4,
+            penLeavingLimit   : [ 0, 0, 0, 50 ]
+        },
+        { // 3 
+            
         }
     ]
 }());
