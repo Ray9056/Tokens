@@ -82,6 +82,25 @@ let Data = (function (){
             penForceTime      : 4,
             penLeavingLimit   : [ 0, 0, 0, 0 ]
         },
-        
+        { // 5
+            ghostSpeed        : 0.95,
+            tunnelSpeed       : 0.5,
+            pmSpeed           : 1,
+            eatingSpeed       : 0.87,
+            ghostFrightSpeed  : 0.6,
+            pmFrightSpeed     : 1,
+            eatingFrightSpeed : 0.87,
+            elroyDotsLeft1    : 40,
+            elroySpeed1       : 1,
+            elroyDotsLeft2    : 20,
+            elroySpeed2       : 10.05,
+            fruitType         : 4,
+            fruitScore        : 700,
+            frightTime        : 2,
+            frightBlinks      : 5,
+            switchTimes       : [ 5, 20, 5, 20, 5, 1037, 1 / 60, 1 ],
+            penForceTime      : 3,
+            penLeavingLimit   : [ 0, 0, 0, 0 ]
+        },
     ]
 }());
