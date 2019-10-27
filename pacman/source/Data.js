@@ -448,7 +448,32 @@ let Data = (function (){
     /** @type {number}  the current game level */
     let gameLevel = 1;
 
-   /** The Public API */ 
+   /** The Public API */
+   return{
+       /**
+        * Sets the game level
+        * @param {number} level
+        */
+       set level(level) {
+           gameLevel = level;
+       },
+
+       /**
+        * The amount of time a fruit stays in the board
+        * @return {number}
+        */
+       get fruitTime() {
+           return Math.round(Math.random() * 1000) + 9000;
+       },
+       
+       /**
+        * The amount of dots left before showing the fruit
+        * @return {number}
+        */
+       get fruitDots1() {
+           return fruitDots1;
+       }
+   }
 
 ]
 }());
