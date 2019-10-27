@@ -472,7 +472,31 @@ let Data = (function (){
         */
        get fruitDots1() {
            return fruitDots1;
-       }
+       },
+
+       /**
+        * The amount of dots left before showing the fruit
+        * @return {number}
+        */
+       get fruitDots2() {
+           return fruitDots2;
+       },
+
+       /**
+        * The value for the energizeer
+        * @return {number}
+        */
+       get energizeerValue() {
+           return energizerValue
+       },
+       
+       /**
+         * The value for the pill
+         * @return {number}
+         */
+        get pillValue() {
+            return pillValue;
+        },
    }
 
 ]
