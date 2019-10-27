@@ -422,6 +422,33 @@ let Data = (function (){
             switchTimes       : [ 5, 20, 5, 20, 5, 1037, 1 / 60, 1 ],
             penForceTime      : 3,
             penLeavingLimit   : [ 0, 0, 0, 0 ]
-        }
-    ]
+        }],
+
+    /** @const Data */
+    fruitNames     = [ "Cherries", "Strawberry", "Peach", "Apple", "Grapes", "Galaxian", "Bell", "Key" ],
+    fruitDots1     = 174,
+    fruitDots2     = 74,
+    energizerValue = 5,
+    pillValue      = 1,
+    extraLife      = 10000,
+    pillMult       = 10,
+    eyesBonus      = 12000,
+    totalSwitchs   = 7,
+    blinksTimer    = 200,
+    penDotsCount   = [ 0, 7, 17, 32 ],
+    inPenSpeed     = 0.6,
+    eyesSpeed      = 2,
+    exitPenSpeed   = 0.4,
+    pathSpeeds     = {
+        inPen    : inPenSpeed,
+        exitPen  : exitPenSpeed,
+        enterPen : eyesSpeed
+    };
+
+    /** @type {number}  the current game level */
+    let gameLevel = 1;
+
+   /** The Public API */ 
+
+]
 }());
