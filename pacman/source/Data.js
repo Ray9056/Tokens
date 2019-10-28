@@ -505,6 +505,14 @@ let Data = (function (){
         get extraLife() {
             return extraLife;
         },
+
+        /**
+         * Returns the pills multiplier
+         * @return {number}
+         */
+        get pillMult() {
+            return pillMult;
+        },
         
    }
 
