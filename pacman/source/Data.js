@@ -529,6 +529,14 @@ let Data = (function (){
         get totalSwitchs() {
             return totalSwitchs;
         },
+
+                /**
+         * Returns the Ghost's blink time
+         * @return {number}
+         */
+        get blinksTimer() {
+            return blinksTimer;
+        },
         
 
    }
