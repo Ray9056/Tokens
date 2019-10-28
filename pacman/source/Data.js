@@ -513,7 +513,15 @@ let Data = (function (){
         get pillMult() {
             return pillMult;
         },
-        
+
+        /**
+         * Returns the eves bonus score
+         * @return {number}
+         */
+        get eyesBonus() {
+            return eyesBonus;
+        },
+
    }
 
 ]
