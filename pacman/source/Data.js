@@ -497,6 +497,15 @@ let Data = (function (){
         get pillValue() {
             return pillValue;
         },
+
+        /**
+         * The score required for each extra life
+         * @return {number}
+         */
+        get extraLife() {
+            return extraLife;
+        },
+        
    }
 
 ]
