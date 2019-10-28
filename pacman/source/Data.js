@@ -522,6 +522,15 @@ let Data = (function (){
             return eyesBonus;
         },
 
+         /**
+         * Returns the total amount of Ghost's mode switchs
+         * @return {number}
+         */
+        get totalSwitchs() {
+            return totalSwitchs;
+        },
+        
+
    }
 
 ]
