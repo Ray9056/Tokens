@@ -561,8 +561,16 @@ let Data = (function (){
             }
             return value;
         },
-        
 
+        /**
+         * Returns the fruit name for the current level
+         * @return {string}
+         */
+        getFruitName() {
+            return fruitNames[Data.getLevelData("fruitType") - 1];
+        },
+
+        
    }
 
 ]
