@@ -538,6 +538,15 @@ let Data = (function (){
             return blinksTimer;
         },
         
+        /**
+         * Returns the Ghost's eyes mode speed
+         * @return {number}
+         */
+        get eyesSpeed() {
+            return eyesSpeed;
+        },
+
+        
 
    }
 
