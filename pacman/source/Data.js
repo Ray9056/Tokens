@@ -546,6 +546,21 @@ let Data = (function (){
             return eyesSpeed;
         },
 
+        /**
+         * Returns the value asociated with the given key for the current level
+         * @param {string} variable
+         * @return {(number|string|Array.<number>)}
+         */
+        getLevelData(variable) {
+            var level = Math.min(gameLevel - 1, levelsData.length - 1),
+                data  = levelsData[level],
+                value = data[variable];
+
+            if (Array.isArray(value)) {
+                return Object.create(value);
+            }
+            return value;
+        },
         
 
    }
