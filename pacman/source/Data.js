@@ -570,6 +570,13 @@ let Data = (function (){
             return fruitNames[Data.getLevelData("fruitType") - 1];
         },
 
+        /**
+         * Returns the Pen Force time in miliseconds
+         * @return {number}
+         */
+        getPenForceTime() {
+            return Data.getLevelData("penForceTime") * 1000;
+        },
         
    }
 
