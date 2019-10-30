@@ -587,6 +587,13 @@ let Data = (function (){
             return Data.getLevelData("switchTimes")[mode] * 1000;
         },
 
+        /**
+         * Returns the Fright time in miliseconds
+         * @return {number}
+         */
+        getFrightTime() {
+            return Data.getLevelData("frightTime") * 1000;
+        },
         
    }
 
