@@ -594,6 +594,14 @@ let Data = (function (){
         getFrightTime() {
             return Data.getLevelData("frightTime") * 1000;
         },
+
+        /**
+         * Returns the amount of switchs when blinking in fright mode
+         * @return {number}
+         */
+        getBlinks() {
+            return Data.getLevelData("frightBlinks") * 2;
+        },
         
    }
 
