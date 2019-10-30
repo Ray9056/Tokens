@@ -578,6 +578,16 @@ let Data = (function (){
             return Data.getLevelData("penForceTime") * 1000;
         },
         
+        /**
+         * Returns the switch time at the given mode in miliseconds
+         * @param {number} mode
+         * @return {number}
+         */
+        getSwitchTime(mode) {
+            return Data.getLevelData("switchTimes")[mode] * 1000;
+        },
+
+        
    }
 
 ]
