@@ -621,6 +621,14 @@ let Data = (function (){
             return pathSpeeds[path];
         },
 
+        /**
+         * Returns the Score for a dead Ghost
+         * @param {number} amount
+         * @return {number}
+         */
+        getGhostScore(amount) {
+            return Math.pow(2, amount) * 100;
+        },
         
         
    }
