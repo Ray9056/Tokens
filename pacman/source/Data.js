@@ -635,6 +635,9 @@ let Data = (function (){
          * @param {number} ghost
          * @return {number}
          */
+        getPenDotsCount(ghost) {
+            return penDotsCount[ghost];
+        },
         
    }
 
