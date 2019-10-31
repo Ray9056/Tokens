@@ -638,6 +638,12 @@ let Data = (function (){
         getPenDotsCount(ghost) {
             return penDotsCount[ghost];
         },
+
+        /**
+         * Returns true if the given mode is Frighten
+         * @param {number} mode
+         * @return {boolean}
+         */
         
    }
 
