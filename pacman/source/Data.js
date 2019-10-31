@@ -629,7 +629,12 @@ let Data = (function (){
         getGhostScore(amount) {
             return Math.pow(2, amount) * 100;
         },
-        
+
+        /**
+         * Returns the amount of dots required before exiting the Pen for the given ghost
+         * @param {number} ghost
+         * @return {number}
+         */
         
    }
 
