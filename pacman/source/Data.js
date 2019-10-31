@@ -603,6 +603,26 @@ let Data = (function (){
             return Data.getLevelData("frightBlinks") * 2;
         },
         
+        /**
+         * Returns the ghost speed
+         * @param {boolean} inPen
+         * @return {number}
+         */
+        getGhostSpeed(inPen) {
+            return inPen ? inPenSpeed : Data.getLevelData("ghostSpeed");
+        },
+
+        /**
+         * Returns the ghost speed inside a path
+         * @param {string} path
+         * @return {number}
+         */
+        getPathSpeed(path) {
+            return pathSpeeds[path];
+        },
+
+        
+        
    }
 
 ]
