@@ -644,8 +644,8 @@ let Data = (function (){
          * @param {number} mode
          * @return {boolean}
          */
-        
-   }
-
-]
+        isFrighten(mode) {
+            return mode === "blue" || mode === "white";
+        }
+   };
 }());
