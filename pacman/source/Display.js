@@ -55,4 +55,12 @@ class Display {
         return [ "ready", "playing", "paused" ].includes(this.display);
     }
 
+    /**
+     * Returns true if the game is paused
+     * @return {boolean}
+     */
+    isPaused() {
+        return this.display === "paused";
+    }
+
 }
