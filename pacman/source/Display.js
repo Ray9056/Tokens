@@ -39,4 +39,12 @@ class Display {
         this.callback();
     }
 
+    /**
+     * Returns true if the game is in the main screen
+     * @return {boolean}
+     */
+    isMainScreen() {
+        return this.display === "mainScreen";
+    }
+
 }
