@@ -31,4 +31,12 @@ class Display {
         return this;
     }
 
+    /**
+     * Adds the class to the design to show the Display
+     */
+    show() {
+        this.container.className = this.display;
+        this.callback();
+    }
+
 }
