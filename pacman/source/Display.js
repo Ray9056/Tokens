@@ -21,4 +21,14 @@ class Display {
         return this.display;
     }
 
+    /**
+     * Sets the Game Display
+     * @param {string} display
+     * @return {Display}
+     */
+    set(display) {
+        this.display = display;
+        return this;
+    }
+
 }
