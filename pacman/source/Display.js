@@ -47,4 +47,12 @@ class Display {
         return this.display === "mainScreen";
     }
 
+    /**
+     * Returns true if the game is in a playing mode
+     * @return {boolean}
+     */
+    isPlaying() {
+        return [ "ready", "playing", "paused" ].includes(this.display);
+    }
+
 }
