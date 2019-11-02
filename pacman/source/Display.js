@@ -13,4 +13,12 @@ class Display {
         this.callback  = callback;
     }
 
+    /**
+     * Gets the Game Display
+     * @return {string}
+     */
+    get() {
+        return this.display;
+    }
+
 }
