@@ -42,5 +42,18 @@ class Food {
             this.matrix[pos.y][pos.x] = Data.energizerValue;
         });
     }
+
+    /**
+     * Creates a list with only the active energizers
+     */
+    createEnergizers() {
+        this.energizers = [];
+        
+        Board.energizers.forEach((pos) => {
+            if (this.matrix[pos.y][pos.x] === Data.energizerValue) {
+                this.energizers.push(Board.getTileXYCenter(pos));
+            }
+        });
+    }
     
 }
