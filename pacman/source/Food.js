@@ -55,5 +55,13 @@ class Food {
             }
         });
     }
-    
+
+    /**
+     * Does the Enerigizers animation
+     */
+    wink() {
+        this.calcRadius();
+        this.drawEnergizers();
+    }
+
 }
