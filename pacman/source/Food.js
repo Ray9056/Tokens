@@ -103,4 +103,14 @@ class Food {
         this.ctx.restore();
     }
 
+    /**
+     * Clears a Pill at the given position
+     * @param {number} x
+     * @param {number} y
+     */
+    clearPill(x, y) {
+        let rect = Board.getPillRect(x, y);
+        this.ctx.clearRect(rect.x, rect.y, rect.size, rect.size);
+    }
+
 }
