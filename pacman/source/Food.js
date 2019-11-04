@@ -64,4 +64,17 @@ class Food {
         this.drawEnergizers();
     }
 
+    /**
+     * Calculates the Radius for the Energizers
+     */
+    calcRadius() {
+        this.radius += this.mult * 0.1;
+        
+        if (this.radius <= this.minRadius) {
+            this.mult = 1;
+        } else if (this.radius >= this.maxRadius) {
+            this.mult = -1;
+        }
+    }
+
 }
