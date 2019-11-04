@@ -138,4 +138,14 @@ class Food {
         this.ctx.restore();
     }
 
+    /**
+     * Clears an Energizer at the given position
+     * @param {number} x
+     * @param {number} y
+     */
+    clearEnergizer(x, y) {
+        let radius = this.maxRadius;
+        this.ctx.clearRect(x - radius, y - radius, radius * 2, radius * 2);
+    }
+
 }
