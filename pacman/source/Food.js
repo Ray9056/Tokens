@@ -85,4 +85,22 @@ class Food {
         this.drawEnergizers();
     }
 
+    /**
+     * Draws all the Pills in the board
+     */
+    drawPills() {
+        this.ctx.save();
+        this.ctx.fillStyle = "white";
+        
+        this.matrix.forEach((row, y) => {
+            row.forEach((value, x) => {
+                let rect = Board.getPillRect(x, y);
+                if (value === Data.pillValue) {
+                    this.ctx.fillRect(rect.x, rect.y, rect.size, rect.size);
+                }
+            });
+        });
+        this.ctx.restore();
+    }
+
 }
