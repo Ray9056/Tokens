@@ -113,4 +113,14 @@ class Food {
         this.ctx.clearRect(rect.x, rect.y, rect.size, rect.size);
     }
 
+    /**
+     * Draws all the remaining Energizers with the given radius
+     */
+    drawEnergizers() {
+        this.energizers.forEach((pos) => {
+            this.clearEnergizer(pos.x, pos.y);
+            this.drawEnergizer(pos.x, pos.y, this.radius);
+        });
+    }
+
 }
