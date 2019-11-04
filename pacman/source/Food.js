@@ -123,4 +123,19 @@ class Food {
         });
     }
 
+    /**
+     * Draws an Energizer at the given position with the given radius
+     * @param {number} x
+     * @param {number} y
+     * @param {number} radius
+     */
+    drawEnergizer(x, y, radius) {
+        this.ctx.save();
+        this.ctx.fillStyle = "white";
+        this.ctx.beginPath();
+        this.ctx.arc(x, y, radius, 0, 2 * Math.PI);
+        this.ctx.fill();
+        this.ctx.restore();
+    }
+
 }
