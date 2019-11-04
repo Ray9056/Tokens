@@ -77,4 +77,12 @@ class Food {
         }
     }
 
+    /**
+     * Draws all the Pills and Energizers in the board
+     */
+    draw() {
+        this.drawPills();
+        this.drawEnergizers();
+    }
+
 }
