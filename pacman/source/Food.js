@@ -2,13 +2,13 @@
  * The Food Class
  */
 class Food {
-    
+
     /**
      * The Food constructor
      */
     constructor() {
         this.ctx = Board.boardCanvas.context;
-        
+
         this.init();
         this.createMatrix();
         this.createEnergizers();
@@ -18,13 +18,13 @@ class Food {
      * Initializes the instance
      */
     init() {
-        this.total      = Board.pillAmount;
-        this.minRadius  = Board.pillSize;
-        this.maxRadius  = Board.energizerSize;
-        this.radius     = this.maxRadius;
+        this.total = Board.pillAmount;
+        this.minRadius = Board.pillSize;
+        this.maxRadius = Board.energizerSize;
+        this.radius = this.maxRadius;
         this.energizers = [];
-        this.matrix     = [];
-        this.mult       = -1;
+        this.matrix = [];
+        this.mult = -1;
     }
 
     /**
@@ -37,7 +37,7 @@ class Food {
                 this.matrix[i][j] = Board.hasPill(j, i) ? Data.pillValue : 0;
             }
         }
-        
+
         Board.energizers.forEach((pos) => {
             this.matrix[pos.y][pos.x] = Data.energizerValue;
         });
@@ -48,7 +48,7 @@ class Food {
      */
     createEnergizers() {
         this.energizers = [];
-        
+
         Board.energizers.forEach((pos) => {
             if (this.matrix[pos.y][pos.x] === Data.energizerValue) {
                 this.energizers.push(Board.getTileXYCenter(pos));
@@ -69,7 +69,7 @@ class Food {
      */
     calcRadius() {
         this.radius += this.mult * 0.1;
-        
+
         if (this.radius <= this.minRadius) {
             this.mult = 1;
         } else if (this.radius >= this.maxRadius) {
@@ -91,7 +91,7 @@ class Food {
     drawPills() {
         this.ctx.save();
         this.ctx.fillStyle = "white";
-        
+
         this.matrix.forEach((row, y) => {
             row.forEach((value, x) => {
                 let rect = Board.getPillRect(x, y);
@@ -164,12 +164,12 @@ class Food {
      */
     eatPill(tile) {
         let value = this.matrix[tile.y][tile.x],
-            pos   = Board.getTileXYCenter(tile);
-        
+            pos = Board.getTileXYCenter(tile);
+
         this.clearPill(tile.x, tile.y);
         this.matrix[tile.y][tile.x] = 0;
         this.total -= 1;
-        
+
         if (value === Data.energizerValue) {
             this.clearEnergizer(pos.x, pos.y);
             this.createEnergizers();
