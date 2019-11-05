@@ -124,7 +124,6 @@ class Food {
         });
     }
 
-    
     /**
      * Draws an Energizer at the given position with the given radius
      * @param {number} x
