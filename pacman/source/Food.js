@@ -176,5 +176,12 @@ class Food {
         }
         return value;
     }
-    
+
+    /**
+     * Returns the amount of Pîlls left
+     * return {number}
+     */
+    getLeftPills() {
+        return this.total;
+    }
 }
