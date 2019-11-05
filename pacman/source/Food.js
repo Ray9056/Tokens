@@ -113,7 +113,6 @@ class Food {
         this.ctx.clearRect(rect.x, rect.y, rect.size, rect.size);
     }
 
-
     /**
      * Draws all the remaining Energizers with the given radius
      */
