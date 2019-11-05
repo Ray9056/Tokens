@@ -156,5 +156,25 @@ class Food {
     isAtPill(tile) {
         return this.matrix[tile.y][tile.x] > 0;
     }
+
+    /**
+     * The Blob eats the Pill at the given cell. Returns the value of the pill. 1 for dot, 5 for energizer
+     * @param {{x: number, y: number}} tile
+     * @return {number}
+     */
+    eatPill(tile) {
+        let value = this.matrix[tile.y][tile.x],
+            pos   = Board.getTileXYCenter(tile);
+        
+        this.clearPill(tile.x, tile.y);
+        this.matrix[tile.y][tile.x] = 0;
+        this.total -= 1;
+        
+        if (value === Data.energizerValue) {
+            this.clearEnergizer(pos.x, pos.y);
+            this.createEnergizers();
+        }
+        return value;
+    }
     
 }
