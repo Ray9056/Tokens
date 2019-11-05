@@ -148,4 +148,13 @@ class Food {
         this.ctx.clearRect(x - radius, y - radius, radius * 2, radius * 2);
     }
 
+    /**
+     * Returns true if there is a Pill at the given cell
+     * @param {{x: number, y: number}} tile
+     * @return {boolean}
+     */
+    isAtPill(tile) {
+        return this.matrix[tile.y][tile.x] > 0;
+    }
+    
 }
