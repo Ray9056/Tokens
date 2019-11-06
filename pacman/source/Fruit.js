@@ -22,4 +22,17 @@ class Fruit {
         }
     }
 
+    /**
+     * Reduces the fruit timer when there is one
+     * @param {number} time
+     */
+    reduceTimer(time) {
+        if (this.timer > 0) {
+            this.timer -= time;
+            if (this.timer <= 0) {
+                this.eat();
+            }
+        }
+    }
+
 }
