@@ -35,4 +35,12 @@ class Fruit {
         }
     }
 
+    /**
+     * Eats the Fruit
+     */
+    eat() {
+        this.clear();
+        this.timer = 0;
+    }
+
 }
