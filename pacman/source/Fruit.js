@@ -43,4 +43,22 @@ class Fruit {
         this.timer = 0;
     }
 
+    /**
+     * Returns true if the given tile is at the fruit position
+     * @param {{x: number, y: number}}
+     * @return {boolean}
+     */
+    isAtPos(tile) {
+        if (this.timer > 0) {
+            let rect = Board.getFruitRect(),
+                pos  = Board.tileToPos(tile);
+            
+            return (
+                pos.x >= rect.left && pos.x <= rect.right &&
+                pos.y >= rect.top  && pos.y <= rect.bottom
+            );
+        }
+        return false;
+    }
+
 }
