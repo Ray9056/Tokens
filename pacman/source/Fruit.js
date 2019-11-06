@@ -61,4 +61,16 @@ class Fruit {
         return false;
     }
 
+    /**
+     * Draws a Fruit
+     * @param {{x: number, y: number}}
+     */
+    draw(tile) {
+        let pos = Board.tileToPos(tile);
+        this.ctx.save();
+        this.ctx.translate(pos.x, pos.y);
+        this["draw" + Data.getFruitName()]();
+        this.ctx.restore();
+    }
+
 }
