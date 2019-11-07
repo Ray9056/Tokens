@@ -146,6 +146,28 @@ class Fruit {
             this.ctx.fillRect(dots[i], dots[i + 1], 1, 1);
         }
     }
+
+    /**
+     * Draws the Peach Fruit
+     */
+    drawPeach() {
+        this.ctx.fillStyle = "rgb(255, 181, 33)";
+        this.ctx.beginPath();
+        this.ctx.arc(6, 10, 5, Math.PI, 1.5 * Math.PI, false);
+        this.ctx.arc(12, 10, 5, 1.5 * Math.PI, 2 * Math.PI, false);
+        this.ctx.arc(10, 11, 7, 0, 0.5 * Math.PI, false);
+        this.ctx.arc(8, 11, 7, 0.5 * Math.PI, Math.PI, false);
+        this.ctx.fill();
+        
+        this.ctx.strokeStyle = "rgb(0, 222, 0)";
+        this.ctx.lineCap = "round";
+        this.ctx.beginPath();
+        this.ctx.moveTo(6, 5);
+        this.ctx.lineTo(14, 4);
+        this.ctx.moveTo(14, 0);
+        this.ctx.quadraticCurveTo(11, 0, 10, 7);
+        this.ctx.stroke();
+    }
     
 
 }
