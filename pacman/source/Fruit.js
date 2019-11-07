@@ -229,6 +229,45 @@ class Fruit {
         this.ctx.lineTo(9, 4);
         this.ctx.stroke();
     }
+
+    /**
+     * Draws the Galaxian Fruit
+     */
+    darwGalaxian() {
+        this.ctx.fillStyle   = "rgb(255, 250, 55)";
+        this.ctx.strokeStyle = "rgb(255, 250, 55)";
+        this.ctx.beginPath();
+        this.ctx.moveTo(1, 4);
+        this.ctx.lineTo(17, 4);
+        this.ctx.lineTo(9, 11);
+        this.ctx.fill();
+        this.ctx.beginPath();
+        this.ctx.moveTo(9, 11);
+        this.ctx.lineTo(9, 18);
+        this.ctx.stroke();
+        
+        this.ctx.strokeStyle = "rgb(0, 51, 255)";
+        this.ctx.beginPath();
+        this.ctx.moveTo(1, 1);
+        this.ctx.lineTo(1, 6);
+        this.ctx.lineTo(8, 12);
+        this.ctx.moveTo(17, 1);
+        this.ctx.lineTo(17, 6);
+        this.ctx.lineTo(10, 12);
+        this.ctx.stroke();
+        
+        this.ctx.fillStyle   = "rgb(255, 0, 0)";
+        this.ctx.strokeStyle = "rgb(255, 0, 0)";
+        this.ctx.beginPath();
+        this.ctx.moveTo(3, 5);
+        this.ctx.lineTo(9, 0);
+        this.ctx.lineTo(15, 5);
+        this.ctx.fill();
+        this.ctx.beginPath();
+        this.ctx.moveTo(9, 3);
+        this.ctx.lineTo(9, 6);
+        this.ctx.stroke();
+    }
     
 
 }
