@@ -168,6 +168,33 @@ class Fruit {
         this.ctx.quadraticCurveTo(11, 0, 10, 7);
         this.ctx.stroke();
     }
+
+    /**
+     * Draws the Apple Fruit
+     */
+    drawApple() {
+        this.ctx.fillStyle = "rgb(222, 0, 0)";
+        this.ctx.beginPath();
+        this.ctx.arc(6, 8, 5, Math.PI, 1.5 * Math.PI, false);
+        this.ctx.arc(12, 8, 5, 1.5 * Math.PI, 2 * Math.PI, false);
+        this.ctx.arc(10, 11, 7, 0, 0.5 * Math.PI, false);
+        this.ctx.arc(13, 15, 3, 0.5 * Math.PI, Math.PI, false);
+        this.ctx.arc(6, 15, 3, 0, 0.5 * Math.PI, false);
+        this.ctx.arc(8, 11, 7, 0.5 * Math.PI, Math.PI, false);
+        this.ctx.fill();
+        
+        this.ctx.strokeStyle = "rgb(0, 222, 0)";
+        this.ctx.lineCap = "round";
+        this.ctx.beginPath();
+        this.ctx.arc(3, 7, 7, 1.5 * Math.PI, 2 * Math.PI, false);
+        this.ctx.arc(13, 4, 4, Math.PI, 1.5 * Math.PI, false);
+        this.ctx.stroke();
+        
+        this.ctx.strokeStyle = "rgba(255, 255, 255, 0.8)";
+        this.ctx.beginPath();
+        this.ctx.arc(7, 9, 4, Math.PI, 1.5 * Math.PI, false);
+        this.ctx.stroke();
+    }
     
 
 }
