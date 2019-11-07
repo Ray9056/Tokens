@@ -292,4 +292,29 @@ class Fruit {
         this.ctx.stroke();
     }
 
+    /**
+     * Draws the Key Fruit
+     */
+    drawKey() {
+        this.ctx.fillStyle = "rgb(0, 222, 222)";
+        this.ctx.beginPath();
+        this.ctx.arc(6, 3, 3, Math.PI, 1.5 * Math.PI, false);
+        this.ctx.arc(12, 3, 3, 1.5 * Math.PI, 2 * Math.PI, false);
+        this.ctx.arc(12, 5, 3, 0, 0.5 * Math.PI, false);
+        this.ctx.arc(6, 5, 3, 0.5 * Math.PI, Math.PI, false);
+        this.ctx.fill();
+        this.ctx.clearRect(6, 2, 6, 2);
+        
+        this.ctx.strokeStyle = "rgb(255, 255, 255)";
+        this.ctx.beginPath();
+        this.ctx.moveTo(8, 8);
+        this.ctx.lineTo(8, 15);
+        this.ctx.arc(9.5, 13.5, 1.5, Math.PI, 0, true);
+        this.ctx.lineTo(11, 8);
+        this.ctx.moveTo(11, 10);
+        this.ctx.lineTo(14, 10);
+        this.ctx.moveTo(11, 13);
+        this.ctx.lineTo(14, 13);
+        this.ctx.stroke();
+    }
 }
