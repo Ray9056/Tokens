@@ -73,4 +73,13 @@ class Fruit {
         this.ctx.restore();
     }
 
+     /**
+     * Clears the Fruit
+     */
+    clear() {
+        let pos = Board.fruitPos;
+        this.ctx.clearRect(pos.x - 1, pos.y - 1, Board.fruitSize, Board.fruitSize);
+    }
+    
+
 }
