@@ -195,6 +195,40 @@ class Fruit {
         this.ctx.arc(7, 9, 4, Math.PI, 1.5 * Math.PI, false);
         this.ctx.stroke();
     }
+
+    /**
+     * Draws the Grapes Fruit
+     */
+    drawGrapes() {
+        this.ctx.fillStyle = "rgb(0, 222, 0)";
+        this.ctx.beginPath();
+        this.ctx.arc(9, 11, 8, 0, 2 * Math.PI);
+        this.ctx.fill();
+        
+        this.ctx.strokeStyle = "rgb(74, 74, 0)";
+        this.ctx.beginPath();
+        this.ctx.moveTo(9, 4);
+        this.ctx.lineTo(2, 11);
+        this.ctx.lineTo(7, 16);
+        this.ctx.moveTo(14, 6);
+        this.ctx.lineTo(8, 12);
+        this.ctx.lineTo(14, 18);
+        this.ctx.moveTo(9, 6);
+        this.ctx.lineTo(15, 12);
+        this.ctx.lineTo(10, 17);
+        this.ctx.moveTo(10, 14);
+        this.ctx.lineTo(4, 18);
+        this.ctx.stroke();
+        
+        this.ctx.strokeStyle = "rgb(222, 148, 74)";
+        this.ctx.beginPath();
+        this.ctx.moveTo(4, 0);
+        this.ctx.lineTo(5, 1);
+        this.ctx.lineTo(12, 1);
+        this.ctx.moveTo(9, 1);
+        this.ctx.lineTo(9, 4);
+        this.ctx.stroke();
+    }
     
 
 }
