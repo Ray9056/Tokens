@@ -269,5 +269,27 @@ class Fruit {
         this.ctx.stroke();
     }
     
+    /**
+     * Draws the Bell Fruit
+     */
+    drawBell() {
+        this.ctx.fillStyle = "rgb(255, 255, 33)";
+        this.ctx.beginPath();
+        this.ctx.moveTo(1, 15);
+        this.ctx.quadraticCurveTo(1, 1, 9, 1);
+        this.ctx.quadraticCurveTo(17, 1, 17, 15);
+        this.ctx.fill();
+        
+        this.ctx.fillStyle = "rgb(0, 222, 222)";
+        this.ctx.fillRect(3, 14, 12, 3);
+        this.ctx.fillStyle = "rgb(255, 255, 255)";
+        this.ctx.fillRect(9, 14, 3, 3);
+        
+        this.ctx.strokeStyle = "rgb(255, 255, 255)";
+        this.ctx.beginPath();
+        this.ctx.moveTo(8, 4);
+        this.ctx.quadraticCurveTo(4, 4, 4, 13);
+        this.ctx.stroke();
+    }
 
 }
