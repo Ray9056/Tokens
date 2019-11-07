@@ -114,6 +114,38 @@ class Fruit {
         this.ctx.lineTo(16, 2);
         this.ctx.stroke();
     }
+
+    /**
+     * Draws the Strawberry Fruit
+     */
+    drawStrawberry() {
+        let dots = [ 3, 7, 5, 6, 4, 10, 7, 8, 6, 11, 7, 13, 9, 10, 9, 14, 10, 12, 11, 8, 12, 11, 14, 6, 14, 9 ];
+        
+        this.ctx.fillStyle = "rgb(222, 0, 0)";
+        this.ctx.beginPath();
+        this.ctx.moveTo(9, 3);
+        this.ctx.quadraticCurveTo(17, 3, 17, 7);
+        this.ctx.quadraticCurveTo(17, 14, 9, 17);
+        this.ctx.quadraticCurveTo(1, 14, 1, 7);
+        this.ctx.quadraticCurveTo(1, 3, 9, 3);
+        this.ctx.fill();
+        
+        this.ctx.fillStyle = "rgb(0, 222, 0)";
+        this.ctx.beginPath();
+        this.ctx.moveTo(5, 3);
+        this.ctx.lineTo(13, 3);
+        this.ctx.lineTo(14, 4);
+        this.ctx.lineTo(9, 7);
+        this.ctx.lineTo(4, 4);
+        this.ctx.fill();
+        
+        this.ctx.fillStyle = "rgb(255, 255, 255)";
+        this.ctx.fillRect(8, 0, 2, 4);
+        
+        for (let i = 0; i < dots.length; i += 2) {
+            this.ctx.fillRect(dots[i], dots[i + 1], 1, 1);
+        }
+    }
     
 
 }
