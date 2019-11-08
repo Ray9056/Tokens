@@ -28,4 +28,18 @@ class Score {
         this.blobs = [ new ScoreBlob(0), new ScoreBlob(1) ];
         this.food  = new Fruit();
     }
+
+    /**
+     * Draws the Score, Blobs and Fruit in the board
+     */
+    draw() {
+        this.drawTexts();
+        this.drawScore();
+        
+        this.blobs.forEach(function (blob) {
+            blob.draw();
+        });
+        this.food.draw(this.fruitTile);
+    }
+    
 }
