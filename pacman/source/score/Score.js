@@ -41,5 +41,20 @@ class Score {
         });
         this.food.draw(this.fruitTile);
     }
+
+    /**
+     * Increases the game score by the given amount
+     * @param {number} amount
+     */
+    incScore(amount) {
+        this.score += amount;
+        if (this.score > Data.extraLife * Math.pow(10, this.bonus)) {
+            if (this.lives < 4) {
+                this.incLife(true);
+            }
+            this.bonus += 1;
+        }
+        this.drawScore();
+    }
     
 }
