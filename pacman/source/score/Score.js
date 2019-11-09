@@ -56,5 +56,21 @@ class Score {
         }
         this.drawScore();
     }
-    
+
+    /**
+     *  Increases/Decreases the game lives depending on the param
+     * @parm {boolean} isIncrease
+     */
+    lincLife(isIncrease) {
+        this.lives += isIncrease ? 1 : -1;
+
+        if (isIncrease) {
+            let blob = new ScoreBlob(this.lives -1);
+            this.blobs.push(blob);
+            blob.draw();
+        } else if (this.blobs.length) {
+            let blob = this.blobs.pop();
+            blob.clear();
+        }
+    }
 }
