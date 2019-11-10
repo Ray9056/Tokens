@@ -90,5 +90,15 @@ class Score {
     pill(value) {
         this.incScore(value * Data.pillMult);
     }
+
+    /**
+     * The Blob ate a fruit
+     * @return {number}
+     */
+    fruit() {
+        let score = Data.getLevelData("fruitScore");
+        this.incScore(score);
+        return score;
+    }
     
 }
