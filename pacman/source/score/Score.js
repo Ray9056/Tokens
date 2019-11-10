@@ -59,7 +59,7 @@ class Score {
 
     /**
      *  Increases/Decreases the game lives depending on the param
-     * @parm {boolean} isIncrease
+     * @param {boolean} isIncrease
      */
     lincLife(isIncrease) {
         this.lives += isIncrease ? 1 : -1;
@@ -73,4 +73,14 @@ class Score {
             blob.clear();
         }
     }
+
+    /**
+     * Increases the game level
+     */
+    newLevel() {
+        this.level += 1;
+        this.ghosts = 0;
+        Data.level  = this.level;
+    }
+    
 }
