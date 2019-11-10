@@ -82,5 +82,13 @@ class Score {
         this.ghosts = 0;
         Data.level  = this.level;
     }
+
+    /**
+     * The Blob ate a pill/energizer
+     * @param {number} value
+     */
+    pill(value) {
+        this.incScore(value * Data.pillMult);
+    }
     
 }
