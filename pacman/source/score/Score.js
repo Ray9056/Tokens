@@ -101,4 +101,20 @@ class Score {
         return score;
     }
     
+    /**
+     * @param {numbeer} amount
+     * @return {number}
+     */
+    kill(amount) {
+        var score = Data.getGhostScore(amount);
+        this.incScore(score);
+
+        if (amount === 4) {
+            this.ghosts += 1;
+            if (this.ghosts === 4) {
+                this.incScore(Data.eyeBonus);
+            }
+        }
+        return score;
+    }
 }
