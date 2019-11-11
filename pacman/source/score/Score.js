@@ -102,6 +102,7 @@ class Score {
     }
     
     /**
+     * The Blob kill a Ghost
      * @param {numbeer} amount
      * @return {number}
      */
