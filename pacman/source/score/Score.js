@@ -118,4 +118,13 @@ class Score {
         }
         return score;
     }
+
+    /**
+     * The Blob died, decrease the lifes
+     * @return {boolean} True on Game Over
+     */
+    died() {
+        this.incLife(false);
+        return this.lives >= 0;
+    }
 }
