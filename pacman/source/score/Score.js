@@ -127,4 +127,9 @@ class Score {
         this.incLife(false);
         return this.lives >= 0;
     }
+
+    /**
+     * Draws the texts in the board
+     */
+    
 }
