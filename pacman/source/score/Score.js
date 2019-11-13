@@ -137,4 +137,11 @@ class Score {
             size : 1.8,
             pos  : { x: this.scoreLeft, y: this.textTop }
         });
+        this.canvas.drawText({
+            text : "Lives",
+            size : 1.8,
+            pos  : { x: this.livesLeft, y: this.textTop }
+        });
+    }
+    
 }
