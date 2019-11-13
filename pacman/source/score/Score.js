@@ -131,5 +131,10 @@ class Score {
     /**
      * Draws the texts in the board
      */
-    
+    drawTexts() {
+        this.canvas.drawText({
+            text : "Score",
+            size : 1.8,
+            pos  : { x: this.scoreLeft, y: this.textTop }
+        });
 }
