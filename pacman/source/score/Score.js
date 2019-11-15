@@ -152,6 +152,7 @@ class Score {
             }
         });
     }
+    
     /**
      * Draws the score in the board
      */
