@@ -162,5 +162,13 @@ class Score {
         this.ctx.fillText(this.score, left + margin, top);
         this.ctx.restore();
     }
+
+    /**
+     * Returns the current level
+     * @return {number}
+     */
+    getLevel() {
+        return this.level;
+    }
     
 }
