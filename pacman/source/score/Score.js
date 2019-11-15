@@ -144,4 +144,23 @@ class Score {
         });
     }
     
+    /**
+     * Draws the score in the board
+     */
+    drawScore() {
+        let left   = this.ctx.measureText("Score").width,
+            margin = this.scoreMargin * Board.tileSize,
+            top    = this.textTop     * Board.tileSize,
+            width  = this.scoreWidth  * Board.tileSize + margin / 2,
+            height = this.scoreHeight * Board.tileSize;
+        
+        this.ctx.save();
+        this.ctx.fillStyle = this.scoreColor;
+        this.ctx.textAlign = "left";
+        this.ctx.font      = "1.8em 'Whimsy TT'";
+        this.ctx.clearRect(left + margin / 2, top - height / 2 - 2, width, height + 2);
+        this.ctx.fillText(this.score, left + margin, top);
+        this.ctx.restore();
+    }
+    
 }
