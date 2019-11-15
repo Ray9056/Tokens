@@ -170,5 +170,12 @@ class Score {
     getLevel() {
         return this.level;
     }
-    
+
+    /**
+     * Returns the current score
+     * @return {number}
+     */
+    getScore() {
+        return this.score;
+    }
 }
