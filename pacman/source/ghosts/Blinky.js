@@ -52,4 +52,13 @@ class Blinky extends Ghost {
         return "rgb(221, 0, 0)";
     }
 
+    /**
+     * Blinky's target is always the current tile of the Blob
+     * @param {Blob} blob
+     * @return {{x: number, y: number}}
+     */
+    chase(blob) {
+        return blob.getTile();
+    }
+
 }
