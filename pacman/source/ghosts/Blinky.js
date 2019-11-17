@@ -35,3 +35,13 @@ class Blinky extends Ghost {
         this.elroyMode   = 0;
         this.activeElroy = dots !== null;
     }
+
+    /**
+     * Returns the Ghost's name
+     * @return {string}
+     */
+    static get name() {
+        return "Blinky";
+    }
+
+}
