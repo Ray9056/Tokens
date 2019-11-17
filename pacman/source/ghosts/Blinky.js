@@ -44,4 +44,12 @@ class Blinky extends Ghost {
         return "Blinky";
     }
 
+    /**
+     * Returns the Ghost's color
+     * @return {string}
+     */
+    static get color() {
+        return "rgb(221, 0, 0)";
+    }
+
 }
