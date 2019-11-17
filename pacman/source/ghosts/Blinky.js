@@ -80,4 +80,11 @@ class Blinky extends Ghost {
         return this.activeElroy && this.elroy > 0;
     }
 
+    /**
+     * Makes it possible for Blinky to switch to "Cruise Elroy" Mode
+     */
+    activateElroy() {
+        this.activeElroy = true;
+    }
+
 }
