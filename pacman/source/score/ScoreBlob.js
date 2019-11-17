@@ -17,3 +17,11 @@ class ScoreBlob extends Blob {
         this.y    = Board.getTileCenter(this.tile.y);
         this.dir  = Board.startingDir;
     }
+
+    /**
+     * Clears the Blob
+     */
+    clear() {
+        this.ctx.clearRect(this.x - this.radius, this.y - this.radius, this.radius * 2, this.radius * 2);
+    }
+}
