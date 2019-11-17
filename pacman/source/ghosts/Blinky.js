@@ -61,4 +61,15 @@ class Blinky extends Ghost {
         return blob.getTile();
     }
 
+    /**
+     * Sets Blinky's "Cruise Elroy" Mode when the number of dots left reaches the target
+     * @param {number} dots
+     */
+    checkElroyDots(dots) {
+        if (dots === Data.getLevelData("elroyDotsLeft1") ||
+                dots === Data.getLevelData("elroyDotsLeft2")) {
+            this.elroy += 1;
+        }
+    }
+
 }
