@@ -72,4 +72,12 @@ class Blinky extends Ghost {
         }
     }
 
+    /**
+     * Returns true when Blinky is in "Cruise Elroy" Mode. Only used for Blinky
+     * @return {boolean}
+     */
+    isElroy() {
+        return this.activeElroy && this.elroy > 0;
+    }
+
 }
