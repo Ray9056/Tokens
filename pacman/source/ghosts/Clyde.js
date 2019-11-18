@@ -46,5 +46,13 @@ class Clyde extends Ghost {
     static get name() {
         return "Clyde";
     }
-    
+
+    /**
+     * Returns the Ghost's color
+     * @return {string}
+     */
+    static get color() {
+        return "rgb(255, 153, 0)";
+    }
+
 }
