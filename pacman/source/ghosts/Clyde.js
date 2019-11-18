@@ -55,4 +55,10 @@ class Clyde extends Ghost {
         return "rgb(255, 153, 0)";
     }
 
+    /**
+     * Clyde's target is the Blob possition if is further away and the Scatter if is closer
+     * @param {Blob} blob
+     * @return {{x: number, y: number}}
+     */
+
 }
