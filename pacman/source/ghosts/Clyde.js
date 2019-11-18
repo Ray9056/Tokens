@@ -38,4 +38,13 @@ class Clyde extends Ghost {
         this.init(canvas, dots);
         this.setPath("inPen");
     }
+
+    /**
+     * Returns the Ghost's name
+     * @return {string}
+     */
+    static get name() {
+        return "Clyde";
+    }
+    
 }
