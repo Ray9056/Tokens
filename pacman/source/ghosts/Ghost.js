@@ -74,4 +74,42 @@ class Ghost {
         return addToPen;
     }
 
+    /**
+     * Moves the Ghost in a predefined path
+     * @param {Blob}   blob
+     * @param {number} switchMode
+     * @return {boolean}
+     */
+    pathMove(blob, switchMode) {
+        let step = this.path[this.pathStep];
+        if (this.passedDist()) {
+            if (this.dir.x) {
+                this.x = step.distx;
+            }
+            if (this.dir.y) {
+                this.y = step.disty;
+            }
+            
+            if (step.next !== null) {
+                this.pathStep = step.next;
+                this.dir      = this.path[this.pathStep].dir;
+            
+            } else if (this.pathName === "exitPen") {
+                this.path  = null;
+                this.dir   = this.turn;
+                this.turn  = null;
+                this.speed = Data.getGhostSpeed(false);
+            
+            } else if (this.pathName === "enterPen") {
+                this.mode       = switchMode;
+                this.target     = this.getTarget(blob);
+                this.tile       = Board.getGhostStartTile(false);
+                this.tileCenter = Board.getTileXYCenter(this.tile);
+                this.turn       = Board.getGhostStartTurn(true);
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
