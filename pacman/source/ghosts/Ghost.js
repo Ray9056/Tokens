@@ -132,4 +132,21 @@ class Ghost {
         }
     }
 
+    /**
+     * The Ghost moved to a new Tile
+     * @param {Blob} blob
+     */
+    newTile(blob) {
+        var tile = Board.getTilePos(this.x, this.y);
+        if (!Board.equalTiles(this.tile, tile)) {
+            this.tile       = tile;
+            this.tileCenter = Board.getTileXYCenter(this.tile);
+            this.center     = false;
+            
+            if (this.isEnteringPen()) {
+                this.setPath("enterPen");
+            }
+        }
+    }
+
 }
