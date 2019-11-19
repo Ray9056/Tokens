@@ -25,3 +25,30 @@ class Ghost {
         this.pathName   = null;
         this.pathStep   = 0;
     }
+
+    /**
+     * Switches the Ghost mode
+     * @param {number} oldMode
+     * @param {number} newMode
+     * @param {Blob}   blob
+     */
+    switchMode(oldMode, newMode, blob) {
+        if (!this.dontSwitch(oldMode)) {
+            this.mode   = newMode;
+            this.target = this.getTarget(blob);
+            this.speed  = this.getSpeed();
+                
+            if (!this.dontHalfTurn(oldMode)) {
+                if (this.path === null) {
+                    this.turn = {
+                        x : this.dir.x * -1,
+                        y : this.dir.y * -1
+                    };
+                } else {
+                    this.turn = { x: 1, y: 0 };
+                }
+            }
+        }
+    }
+    
+}
