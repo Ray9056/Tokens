@@ -112,4 +112,24 @@ class Ghost {
         return false;
     }
 
+    /**
+     * Moves the Ghost around the board
+     * @param {Blob} blob
+     */
+    normalMove(blob) {
+        this.newTile(blob);
+        this.x = Board.tunnelEnds(this.x);
+        
+        if (!this.center && this.passedCenter()) {
+            if (this.turn) {
+                this.makeTurn();
+            }
+            if (this.isNextIntersection()) {
+                this.decideTurn();
+            }
+            this.speed  = this.getSpeed();
+            this.center = true;
+        }
+    }
+
 }
