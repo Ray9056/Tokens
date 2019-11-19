@@ -50,5 +50,28 @@ class Ghost {
             }
         }
     }
-    
+
+    /**
+     * Moves the Ghost
+     * @param {number} speed
+     * @param {Blob}   blob
+     * @param {number} switchMode
+     * @return {boolean}
+     */
+    move(speed, blob, switchMode) {
+        let addToPen = false;
+        this.x += this.dir.x * this.speed * speed;
+        this.y += this.dir.y * this.speed * speed;
+        
+        if (this.path !== null) {
+            addToPen = this.pathMove(blob, switchMode);
+        } else {
+            this.normalMove(blob);
+        }
+        
+        this.moveFeet();
+        this.draw();
+        return addToPen;
+    }
+
 }
