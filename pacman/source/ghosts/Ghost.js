@@ -149,4 +149,16 @@ class Ghost {
         }
     }
 
+    /**
+     * Sets the Path of the Ghost
+     * @param {string} path
+     */
+    setPath(name) {
+        this.pathName = name;
+        this.pathStep = 0;
+        this.path     = this.paths[this.pathName];
+        this.dir      = this.path[this.pathStep].dir;
+        this.speed    = Data.getPathSpeed(name);
+    }
+
 }
