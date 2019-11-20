@@ -161,4 +161,12 @@ class Ghost {
         this.speed    = Data.getPathSpeed(name);
     }
 
+    /**
+     * Returns true if the Ghost is entering the Pen
+     * @return {boolean}
+     */
+    isEnteringPen() {
+        return this.mode === "eyes" && Board.equalTiles(this.tile, Board.eyesTarget);
+    }
+
 }
