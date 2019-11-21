@@ -179,4 +179,18 @@ class Ghost {
         this.turn = null;
     }
 
+    /**
+     * The Ghost decided which direction to do next depending on different factors
+     */
+    decideTurn() {
+        let turns = this.getTurns();
+        if (turns.length === 1) {
+            this.turn = turns[0];
+        } else if (Data.isFrighten(this.mode)) {
+            this.turn = turns[Utils.rand(0, turns.length - 1)];
+        } else {
+            this.turn = this.getTargetTurn(turns);
+        }
+    }
+
 }
