@@ -1,4 +1,4 @@
-/**
+ /**
  * The Ghost Base Class
  */
 class Ghost {
@@ -167,6 +167,16 @@ class Ghost {
      */
     isEnteringPen() {
         return this.mode === "eyes" && Board.equalTiles(this.tile, Board.eyesTarget);
+    }
+
+    /**
+     * The Ghost turns used the previously stored turn direction
+     */
+    makeTurn() {
+        this.x    = this.tileCenter.x;
+        this.y    = this.tileCenter.y;
+        this.dir  = this.turn;
+        this.turn = null;
     }
 
 }
