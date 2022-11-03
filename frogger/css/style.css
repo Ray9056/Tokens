@@ -1,0 +1,60 @@
+body {
+    text-align: center;
+}
+
+h1 {
+  color: aliceblue;
+  margin-top: 7%;
+  text-align: center;
+  font-weight: bold;
+}
+
+h2 {
+  color: aliceblue;
+  text-align: center;
+}
+
+/*Game Over Modal Styling*/
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  background-color: #ffffff;
+  align-content: center;
+}
+
+.gameStats {
+  margin: auto;
+  display: table-cell;
+  padding: 20px;
+  width: 80%;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.para1-gameover {
+  font-weight: bold;
+  font-size: larger;
+}
+
+/*Play Again Button*/
+.play-again {
+  background-color: cyan;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
