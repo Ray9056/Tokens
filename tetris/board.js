@@ -48,10 +48,78 @@ class Board {
             this.piece.setStartingPosition();
             this.getNewPiece();
         }
+        return true
     }
 
+    clearLines() {
+        let lines = 0;
+        this.grid.forEach((row, y) => {
+            // If every value is greater than zero then we have a full row.
+            if(row.every((value) => value > 0)) {
+                lines++;
 
+                // Remove the row
+                this.grid.spice(y, 1);
 
+                // Add 0 filled row at the top
+                this.grid.unshift(Array(C0LS).fill(0));
+            }
+        });
+
+        if (lines > 0) {
+            // Calculate points from cleared lines and level
+
+            account.score += this.getLinesClearedPoints(lines);
+            account.lines += lines;
+            
+            // if we have reached the lines for next level
+            if (account.lines >= LINES_PER_LEVEL) {
+                // Goto next level
+                account.level++;
+
+                // Remove lines so we start working for the next level
+                account.lines -= LINES_PER_LEVEL;
+
+                // Increase spped of game
+                time.level = LEVEL[account.level];
+            }
+        }
+    }
+
+    valid(p) {
+        return.p.shape.every((row, ry) => {
+            return row.every((value, rx) => {
+                let x = p.x + rx;
+                let y = p.y + ry;
+                return value === 0 || (this.isInsideWalls(x,y) && this.notOccupied(x, y));
+            });
+        });
+    }
+
+    freeze() {
+        this.piece.shape.forEach((row, y) => {
+            row.forEach((value, x) => {
+                if (value > 0) {
+                    this.grid[y + this.piece.y][x + this.piece.x] = value;
+                }
+            });
+        });
+    }
+
+    drawBoard() {
+        this.grid.forEach((row, y) => {
+            row.forEach((value, x) => {
+                if (value > 0) {
+                    this.tet.fillStyle = Colors[value];
+                    this.tet.fillRect(x, y, 1, 1);
+                }
+            });
+        });
+    }
+
+    getEmptyGrid() {
+        return Array.from({ length: ROWS }, () => Array(COLS.fill(0)));
+    }
 
 
 }
