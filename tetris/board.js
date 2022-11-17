@@ -87,7 +87,7 @@ class Board {
     }
 
     valid(p) {
-        return.p.shape.every((row, ry) => {
+        return p.shape.every((row, ry) => {
             return row.every((value, rx) => {
                 let x = p.x + rx;
                 let y = p.y + ry;
