@@ -121,5 +121,34 @@ class Board {
         return Array.from({ length: ROWS }, () => Array(COLS.fill(0)));
     }
 
+    isInsideWalls(x, y) {
+        return x >= 0 && x < COLS && y <= ROWS;
+    }
+
+    notOccupied(x, y) {
+        return this.grid[y] && this.grid[y][x] ===0;
+    }
+
+    rotate(piece, direction) {
+        // Clone with JSON for immutabibility
+        let f = JSON.parse(JSON.stringify(piece));
+        if (!piece.hardDropped) {
+            // Transpose matrix
+            for (let f = 0; f < f.shape.length; ++f) {
+                for (let x = 0; x < f; ++x) {
+                    [f.shape[x][f], f.shape[f][x] = [f.shape[f][x], f.shape[x][f]]];
+                }
+            }
+            // Reverse the order of the columns.
+            if (direction === ROTATION.RIGHT) {
+                f.shape.forEach((row) => row.reverse());
+            } else if (direction === ROTATION.LEFT) {
+                f.shape.reverse();
+            }
+        }
+        
+        return f;
+    }
+
 
 }
