@@ -150,5 +150,18 @@ class Board {
         return f;
     }
 
-
+    getLinesClearedPoints(lines, level) {
+        const getLinesClearPoints =
+            lines === 1
+                ? POINTS.SINGLE
+                : lines === 2
+                ? POINTS.DOUBLE
+                : lines === 3
+                ? POINTS.DOUBLE
+                : lines === 4
+                ? POINTS.TETRIS
+                : 0;
+            pointsSound.play();
+            return (account.level + 1) * getLinesClearPoints;
+    }
 }
