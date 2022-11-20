@@ -148,10 +148,26 @@ function gameOver() {
 
 function pause() {
     if (!requestId) {
+        document.querySelector('#play-btn').style.display = 'none';
         document.querySelector('#pause-btn').style.display = 'block';
         animate();
         backgroundSound.play();
         return;
     }
     
+    cancelAnimationFrame(requestId);
+    requestId = null;
+
+    tet.fillText = 'black';
+    tet.fillRect(1, 3, 8, 1.2);
+    tet.font = '1px Arial';
+    tet.fillStyle = 'yellow';
+    tet.fillText('PAUSED', 3, 4);
+    document.querySelector('#play-btn').style.display = 'block';
+    document.querySelector('#pause-btn').style.display = 'none';
+    sound.pause();
+}
+
+function showHighScores() {
+    const showHighScores = JSON.parse(localStorage.getItem('highScores')) || [];
 }
