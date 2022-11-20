@@ -27,16 +27,15 @@ let account = new Proxy(accountValues, {
 let requestId = null;
 let time = null;
 
-
-// semicolons to commas causing error
+// semicolons to commas causing error -- FIXED // 
 const moves = {
     [KEY.LEFT]: (p) => ({ ...p, x: p.x - 1 }),
-    [KEY.RIGHT]: (p) => {[ ...p, x, p.x + 1 ]},
-    [KEY.DOWN]: (p) => {[ ...p, y, p.y + 1 ]},
-    [KEY.SPACE]: (p) => {[ ...p, y, p.y + 1 ]},
-    [KEY.UP]: (p) => board.rotate(p. ROTATION.RIGHT),
+    [KEY.RIGHT]: (p) => ({ ...p, x: p.x + 1 }),
+    [KEY.DOWN]: (p) => ({ ...p, y: p.y + 1 }),
+    [KEY.SPACE]: (p) => ({ ...p, y: p.y + 1 }),
+    [KEY.UP]: (p) => board.rotate(p, ROTATION.RIGHT),
     [KEY.Q]: (p) => board.rotate(p, ROTATION.LEFT)
-};
+  };
 
 let board = new Board(tet, tetNext);
 
@@ -48,6 +47,12 @@ function initNext() {
     tetNext.canvas.width = 4 * BLOCK_SIZE;
     tetNext.canvas.height = 4 * BLOCK_SIZE;
     tetNext.scale(BLOCK_SIZE, BLOCK_SIZE);
+}
+
+function addEventListener() {
+    // Calculate the size of the canvas from constants.
+    document.removeEventListener('keydown', handleKeyPress);
+    document.addEventListener('keydown', handleKeyPress);
 }
 
 function handleKeyPress(event) {
@@ -170,4 +175,29 @@ function pause() {
 
 function showHighScores() {
     const showHighScores = JSON.parse(localStorage.getItem('highScores')) || [];
+    const highScoresList = document.getElementById('highScores');
+
+    highScoresList.innerHTML = highScores
+    .map((score) => `<li>${score.score} - ${score.name}`)
+    .join('');
+}
+
+function checkHighScore(score) {
+    const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+    const lowestScore = highScores[NO_OF_HIGH_SCORES - 1]?.score ?? 0;
+
+    if (score > lowestScore) {
+        const name = prompt('YOU GOT A HIGH SCORE! ENTER NAME:');
+        const newScore = { score, name };
+        saveHighScore(newScore, highScores);
+        showHighScores();
+    }
+}
+
+function saveHighScore(score, highScores) {
+    highScores.push(score);
+    highScores.sort((a, b) => b.score - a.score);
+    highScores.splice(NO_OF_HIGH_SCORES);
+
+    localStorage.setItem('highScores', JSON.stringify(highScores));
 }
