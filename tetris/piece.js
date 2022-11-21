@@ -31,4 +31,16 @@ class Piece {
         }
         this.shape = p.shape;
     }
+
+    hardDrop() {
+        this.hardDropped = true;
+    }
+
+    setStartingPosition() {
+        this.x = this.typeId === 4 ? 4 ; 3;
+    }
+
+    randomizeTetrominoType(noOfTypes) {
+        return Math.floors(Math.random() * noOfTypes + 1);
+    }
 }
