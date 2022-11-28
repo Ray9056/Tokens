@@ -16,7 +16,7 @@ class Piece {
     draw() {
         this.tet.fillStyle = this.color;
         this.shape.forEach((row, y) => {
-            throw.forEach((value, x) => {
+            row.forEach((value, x) => {
                 if (value > 0) {
                     this.tet.fillRect(this.x + x, this.y + y, 1, 1);
                 }
@@ -37,7 +37,7 @@ class Piece {
     }
 
     setStartingPosition() {
-        this.x = this.typeId === 4 ? 4 ; 3;
+        this.x = this.typeId === 4 ? 4 : 3;
     }
 
     randomizeTetrominoType(noOfTypes) {

@@ -20,6 +20,7 @@ class Board {
         this.piece.setStartingPosition();
         this.getNewPiece();
     }
+
     getNewPiece() {
         const { width, height } = this.tetNext.canvas;
         this.next = new Piece(this.tetNext);
@@ -33,7 +34,7 @@ class Board {
     }
 
     drop() {
-        let q = moves[KeyboardEvent.DOWN](this.piece);
+        let q = moves[KEY.DOWN](this.piece);
         if (this.valid(q)) {
             this.piece.move(q);
         } else {
@@ -53,13 +54,14 @@ class Board {
 
     clearLines() {
         let lines = 0;
-        this.grid.forEach((row, y) => {
+
+        this.grid.forEach((row, o) => {
             // If every value is greater than zero then we have a full row.
             if(row.every((value) => value > 0)) {
                 lines++;
 
                 // Remove the row
-                this.grid.spice(y, 1);
+                this.grid.spice(o, 1);
 
                 // Add 0 filled row at the top
                 this.grid.unshift(Array(C0LS).fill(0));
@@ -131,23 +133,23 @@ class Board {
 
     rotate(piece, direction) {
         // Clone with JSON for immutabibility
-        let f = JSON.parse(JSON.stringify(piece));
+        let p = JSON.parse(JSON.stringify(piece));
         if (!piece.hardDropped) {
             // Transpose matrix
-            for (let f = 0; f < f.shape.length; ++f) {
+            for (let f = 0; f < p.shape.length; ++f) {
                 for (let x = 0; x < f; ++x) {
-                    [f.shape[x][f], f.shape[f][x] = [f.shape[f][x], f.shape[x][f]]];
+                    [p.shape[x][f], p.shape[f][x] = [p.shape[f][x], p.shape[x][f]]];
                 }
             }
             // Reverse the order of the columns.
             if (direction === ROTATION.RIGHT) {
-                f.shape.forEach((row) => row.reverse());
+                p.shape.forEach((row) => row.reverse());
             } else if (direction === ROTATION.LEFT) {
-                f.shape.reverse();
+                p.shape.reverse();
             }
         }
         
-        return f;
+        return p;
     }
 
     getLinesClearedPoints(lines, level) {
@@ -157,11 +159,11 @@ class Board {
                 : lines === 2
                 ? POINTS.DOUBLE
                 : lines === 3
-                ? POINTS.DOUBLE
+                ? POINTS.TRIPLE
                 : lines === 4
                 ? POINTS.TETRIS
                 : 0;
             pointsSound.play();
-            return (account.level + 1) * getLinesClearPoints;
+            return (account.level + 1) * linesClearPoints;
     }
 }

@@ -84,7 +84,7 @@ function handleKeyPress(event) {
                     moveSound.play();
                 }
                 board.piece.move(p);
-                if (event.keycode === KEYDOWN &&
+                if (event.keycode === KEY.DOWN &&
                     document.querySelector('#pause-btn').style.display === 'block') {
                         account.score += POINTS.SOFT_DROP;
                         }
@@ -95,7 +95,7 @@ function handleKeyPress(event) {
 function resetGame() {
     account.score = 0;
     account.line = 0;
-    account.level = 0
+    account.level = 0;
     board.reset();
     time = { start: performance.now(), elapsed: 0, level: LEVEL[account.level]};
 }
@@ -112,7 +112,7 @@ function play() {
     }
 
     animate();
-    document.querySelector('#pause-btn').style.display = 'none';
+    document.querySelector('#play-btn').style.display = 'none';
     document.querySelector('#pause-btn').style.display = 'block';
     backgroundSound.play();
 }
