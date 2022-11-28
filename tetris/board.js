@@ -5,7 +5,7 @@ class Board {
         this.init();
     }
 
-    int() {
+    init() {
         // Calculate size of canvas from constants.
         this.tet.canvas.width = COLS * BlOCK_SIZE;
         this.tet.canvas.width = ROWS * BlOCK_SIZE;

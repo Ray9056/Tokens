@@ -2,7 +2,7 @@
 
 const COLS = 10;
 const ROWS = 20;
-const BlOCK_SIZE = 30;
+const BLOCK_SIZE = 30;
 const LINES_PER_LEVEL = 10;
 const NO_OF_HIGH_SCORES = 10;
 const COLORS = [
@@ -19,7 +19,7 @@ const COLORS = [
 const SHAPES = [
     [],
     [[0, 0, 0, 0], [1, 1, 1, 1], [0, 0, 0, 0], [0, 0, 0, 0]],
-    [[2, 0, 0,], [2, 2, 2, 2], [0, 0, 0, 0]],
+    [[2, 0, 0,], [2, 2, 2], [0, 0, 0]],
     [[0, 0, 3],
      [3, 3, 3],
      [0, 0, 0]],
