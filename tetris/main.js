@@ -174,7 +174,7 @@ function pause() {
 }
 
 function showHighScores() {
-    const showHighScores = JSON.parse(localStorage.getItem('highScores')) || [];
+    const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
     const highScoresList = document.getElementById('highScores');
 
     highScoresList.innerHTML = highScores
@@ -187,7 +187,7 @@ function checkHighScore(score) {
     const lowestScore = highScores[NO_OF_HIGH_SCORES - 1]?.score ?? 0;
 
     if (score > lowestScore) {
-        const name = prompt('YOU GOT A HIGH SCORE! ENTER NAME:');
+        const name = prompt('You earned a high score! ENTER NAME:');
         const newScore = { score, name };
         saveHighScore(newScore, highScores);
         showHighScores();

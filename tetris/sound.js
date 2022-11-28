@@ -24,7 +24,7 @@ class Sound {
 
 Sound.prototype.soundSetting = function() {
     let soundItems = document.querySelectorAll(".sound-item");
-    for (let soundItem of soundItem) {
+    for (let soundItem of soundItems) {
         soundItem.addEventListener("click", (e)=> {
             this.muteToggle();
         });
@@ -34,7 +34,7 @@ Sound.prototype.soundSetting = function() {
 Sound.prototype.muteToggle = function() {
     if(!this.muted) {
         for(let sound of this.sounds) {
-            sound.muted = false;
+            sound.muted = true;
         }
         document.querySelector("#sound-speaker").innerHTML = "\u{1F509}";
         document.querySelector("#sound-description").innerHTML = "on";
