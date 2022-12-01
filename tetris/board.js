@@ -7,11 +7,11 @@ class Board {
 
     init() {
         // Calculate size of canvas from constants.
-        this.tet.canvas.width = COLS * BlOCK_SIZE;
-        this.tet.canvas.width = ROWS * BlOCK_SIZE;
+        this.tet.canvas.width = COLS * BLOCK_SIZE;
+        this.tet.canvas.height = ROWS * BLOCK_SIZE;
 
         // Scale so we don't need to give size on every draw.
-        this.tet.scale(BlOCK_SIZE, BlOCK_SIZE);
+        this.tet.scale(BLOCK_SIZE, BLOCK_SIZE);
     }
 
     reset() {
@@ -61,10 +61,10 @@ class Board {
                 lines++;
 
                 // Remove the row
-                this.grid.spice(o, 1);
+                this.grid.splice(o, 1);
 
                 // Add 0 filled row at the top
-                this.grid.unshift(Array(C0LS).fill(0));
+                this.grid.unshift(Array(COLS).fill(0));
             }
         });
 
@@ -89,10 +89,10 @@ class Board {
     }
 
     valid(p) {
-        return p.shape.every((row, ry) => {
-            return row.every((value, rx) => {
-                let x = p.x + rx;
-                let y = p.y + ry;
+        return p.shape.every((row, dy) => {
+            return row.every((value, dx) => {
+                let x = p.x + dx;
+                let y = p.y + dy;
                 return value === 0 || (this.isInsideWalls(x,y) && this.notOccupied(x, y));
             });
         });
@@ -112,7 +112,7 @@ class Board {
         this.grid.forEach((row, y) => {
             row.forEach((value, x) => {
                 if (value > 0) {
-                    this.tet.fillStyle = Colors[value];
+                    this.tet.fillStyle = COLORS[value];
                     this.tet.fillRect(x, y, 1, 1);
                 }
             });
@@ -120,7 +120,7 @@ class Board {
     }
 
     getEmptyGrid() {
-        return Array.from({ length: ROWS }, () => Array(COLS.fill(0)));
+        return Array.from({ length: ROWS }, () => Array(COLS).fill(0));
     }
 
     isInsideWalls(x, y) {
@@ -128,7 +128,7 @@ class Board {
     }
 
     notOccupied(x, y) {
-        return this.grid[y] && this.grid[y][x] ===0;
+        return this.grid[y] && this.grid[y][x] === 0;
     }
 
     rotate(piece, direction) {
@@ -153,7 +153,7 @@ class Board {
     }
 
     getLinesClearedPoints(lines, level) {
-        const getLinesClearPoints =
+        const lineClearPoints =
             lines === 1
                 ? POINTS.SINGLE
                 : lines === 2
@@ -164,6 +164,6 @@ class Board {
                 ? POINTS.TETRIS
                 : 0;
             pointsSound.play();
-            return (account.level + 1) * linesClearPoints;
+            return (account.level + 1) * lineClearPoints;
     }
 }
