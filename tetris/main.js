@@ -175,7 +175,7 @@ function pause() {
 
 function showHighScores() {
     const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
-    const highScoresList = document.getElementById('highScores');
+    const highScoreList = document.getElementById('highScores');
 
     highScoresList.innerHTML = highScores
     .map((score) => `<li>${score.score} - ${score.name}`)

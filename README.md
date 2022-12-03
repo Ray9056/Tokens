@@ -22,7 +22,10 @@ Reminisce on the good ole days with these classic gems.
 
 ![Snake](https://github.com/Jernical/Tokens/blob/master/assets/images/Snake.gif)
 
-## Third Game: Pacman (Coming Soon)
+## Third Game: Tetris (Comming Soon)
+* The objective of the game is to move and rotate falling geometric shapes to form complete rows at the bottom of the game board.
+
+## Fourth Game: Pacman (Coming Soon)
 * Pacman is an game, where a yellow, circular character navigates a maze, consuming pellets and fruit, avoiding ghosts and occasionally eating them.
 
 
