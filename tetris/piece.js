@@ -41,6 +41,6 @@ class Piece {
     }
 
     randomizeTetrominoType(noOfTypes) {
-        return Math.floors(Math.random() * noOfTypes + 1);
+        return Math.floor(Math.random() * noOfTypes + 1);
     }
 }

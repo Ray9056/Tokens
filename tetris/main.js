@@ -27,7 +27,6 @@ let account = new Proxy(accountValues, {
 let requestId = null;
 let time = null;
 
-// semicolons to commas causing error -- FIXED // 
 const moves = {
     [KEY.LEFT]: (p) => ({ ...p, x: p.x - 1 }),
     [KEY.RIGHT]: (p) => ({ ...p, x: p.x + 1 }),
@@ -38,6 +37,7 @@ const moves = {
   };
 
 let board = new Board(tet, tetNext);
+
 
 initNext();
 showHighScores();
@@ -94,7 +94,7 @@ function handleKeyPress(event) {
 
 function resetGame() {
     account.score = 0;
-    account.line = 0;
+    account.lines = 0;
     account.level = 0;
     board.reset();
     time = { start: performance.now(), elapsed: 0, level: LEVEL[account.level]};
@@ -163,7 +163,7 @@ function pause() {
     cancelAnimationFrame(requestId);
     requestId = null;
 
-    tet.fillText = 'black';
+    tet.fillStyle = 'black';
     tet.fillRect(1, 3, 8, 1.2);
     tet.font = '1px Arial';
     tet.fillStyle = 'yellow';
@@ -177,7 +177,7 @@ function showHighScores() {
     const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
     const highScoreList = document.getElementById('highScores');
 
-    highScoresList.innerHTML = highScores
+    highScoreList.innerHTML = highScores
     .map((score) => `<li>${score.score} - ${score.name}`)
     .join('');
 }

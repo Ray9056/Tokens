@@ -37,6 +37,13 @@ Sound.prototype.muteToggle = function() {
             sound.muted = true;
         }
         document.querySelector("#sound-speaker").innerHTML = "\u{1F509}";
+        document.querySelector("#sound-description").innerHTML = "off";
+        this.muted = true;
+    } else {
+        for (let sound of this.sounds) {
+            sound.muted = false;
+        }
+        document.querySelector("#sound-speaker").innerHTML = "\u{1F509}";
         document.querySelector("#sound-description").innerHTML = "on";
         this.muted = false;
     }
