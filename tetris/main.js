@@ -56,7 +56,7 @@ function addEventListener() {
 }
 
 function handleKeyPress(event) {
-    if(event.keyCode === KEY.P) {
+    if (event.keyCode === KEY.P) {
         pause();
     }
     if (event.keyCode === KEY.ESC) {
@@ -67,7 +67,7 @@ function handleKeyPress(event) {
         let p = moves[event.keyCode](board.piece);
         if (event.keyCode === KEY.SPACE) {
             // Hard drop
-            if (document.querySelector('#pause-btn').styledisplay === 'block') {
+            if (document.querySelector('#pause-btn').style.display === 'block') {
                 dropSound.play();
             } else {
                 return;
@@ -76,15 +76,15 @@ function handleKeyPress(event) {
             while (board.valid(p)) {
                 account.score += POINTS.HARD_DROP;
                 board.piece.move(p);
-                p = MOVES[KEY.DOWN](board.piece);
+                p = moves[KEY.DOWN](board.piece);
             }
             board.piece.hardDrop();
          } else if (board.valid(p)) {
-                if (document.querySelector('pause-btn').style.display === 'block') {
+                if (document.querySelector('#pause-btn').style.display === 'block') {
                     moveSound.play();
                 }
                 board.piece.move(p);
-                if (event.keycode === KEY.DOWN &&
+                if (event.keyCode === KEY.DOWN &&
                     document.querySelector('#pause-btn').style.display === 'block') {
                         account.score += POINTS.SOFT_DROP;
                         }

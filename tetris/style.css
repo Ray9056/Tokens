@@ -2,6 +2,15 @@
     font-family: 'Press Start 2P', cursive;
 }
 
+h1, p {
+    color: white;
+}
+
+h2 {
+    color: white;
+    padding-top: 5%;
+}
+
 .grid {
     display: contents;
     grid-template-columns: 350px 320px 200px;

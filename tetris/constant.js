@@ -1,4 +1,4 @@
-'use scrict';
+'use strict';
 
 const COLS = 10;
 const ROWS = 20;
